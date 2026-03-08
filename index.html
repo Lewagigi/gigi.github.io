@@ -5,16 +5,99 @@
   <title>Mon Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>Salut, moi c’est [Ton prénom]</h1>
-  <p>Développeur web / étudiant / etc.</p>
 
-  <h2>Mes projets</h2>
+<body>
+
+  <h1></h1>
+  <p></p>
+
+ 
+
+  <!-- SECTION ARTICLE -->
+  <h2>Résumé d’un article sur l’IA et la surveillance</h2>
+
+  <p><strong>Voici une traduction en français facile (résumé simple)</strong> de l’article de <strong>MIT Technology Review</strong> intitulé : 
+  <em>“Is the Pentagon allowed to surveil Americans with AI?”</em>.</p>
+
+  <h3>Idée principale</h3>
+
+  <p>La question est : <strong>Est-ce que le Pentagone peut surveiller les Américains avec l’intelligence artificielle ?</strong></p>
+
+  <p>La réponse courte : <strong>la loi n’est pas très claire</strong>, et certaines règles pourraient permettre ce type de surveillance.</p>
+
+  <h3>Explication simple</h3>
+
+  <h4>1. Ce que dit la loi</h4>
+
+  <p>Aux États-Unis, il existe des lois qui <strong>limitent la surveillance des citoyens</strong> par l’armée et les agences de renseignement.</p>
+
+  <p>Par exemple :</p>
+
   <ul>
-    <li>Projet 1 – description</li>
-    <li>Projet 2 – description</li>
+    <li>la Constitution protège la vie privée</li>
+    <li>certaines lois exigent <strong>un mandat d’un juge</strong> pour surveiller quelqu’un</li>
   </ul>
 
-  <p>Contact : tonmail@email.com</p>
+  <p>Mais ces règles ont été écrites <strong>avant l’IA moderne</strong>.</p>
+
+  <h4>2. Le problème avec l’IA</h4>
+
+  <p>L’intelligence artificielle peut :</p>
+
+  <ul>
+    <li>analyser <strong>énormément de données très vite</strong></li>
+    <li>trouver des relations entre des informations</li>
+    <li>surveiller des activités en ligne ou des images</li>
+  </ul>
+
+  <p>Donc, même si chaque donnée est légale séparément, <strong>l’IA peut créer une surveillance beaucoup plus puissante</strong>.</p>
+
+  <h4>3. Le débat actuel</h4>
+
+  <p>Il y a un conflit entre :</p>
+
+  <ul>
+    <li>le <strong>Pentagone</strong> (qui veut utiliser l’IA pour la sécurité nationale)</li>
+    <li>certaines entreprises d’IA et des experts (qui ont peur d’une surveillance massive)</li>
+  </ul>
+
+  <p>Par exemple, certaines entreprises ont refusé des contrats militaires parce qu’elles craignaient que l’IA serve à <strong>surveiller les citoyens américains</strong>.</p>
+
+  <h4>4. Pourquoi c’est flou</h4>
+
+  <p>Le gouvernement dit que l’IA sera utilisée seulement pour <strong>des usages légaux</strong>.</p>
+
+  <p>Mais le problème est que :</p>
+
+  <ul>
+    <li>certaines lois de surveillance sont <strong>vagues ou anciennes</strong></li>
+    <li>elles ont déjà été utilisées pour <strong>justifier une surveillance très large</strong></li>
+  </ul>
+
+  <p>Donc même si c’est « légal », cela peut quand même poser <strong>des questions éthiques et de vie privée</strong>.</p>
+
+  <h3>Conclusion simple</h3>
+
+  <ul>
+    <li>La loi n’interdit pas clairement l’usage de l’IA pour certaines formes de surveillance.</li>
+    <li>Mais beaucoup de personnes pensent qu’il faut <strong>de nouvelles lois</strong> pour protéger la vie privée.</li>
+  </ul>
+
+  <!-- CODE SOURCE -->
+  <h2>Code source de cette page</h2>
+  <pre id="code-source">Chargement...</pre>
+
+  <script>
+    fetch("https://raw.githubusercontent.com/lewagigi/gigi.github.io/main/index.html")
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById("code-source").textContent = text;
+      })
+      .catch(err => {
+        document.getElementById("code-source").textContent = "Erreur de chargement du code.";
+      });
+  </script>
+
 </body>
 </html>
+
