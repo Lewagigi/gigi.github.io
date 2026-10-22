@@ -1,21 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LEWALIBARI RÉGIS | À l'image de Christ</title>
+  <title>LEWALIBARI RÉGIS | Vivre à l'image de Christ</title>
 
-  <meta name="description"
-        content="Découvrez la vision chrétienne de Régis : vivre à l'image de Jésus-Christ à travers sept principes bibliques.">
+  <meta name="description" content="Découvrez la vision chrétienne de LEWALIBARI RÉGIS, ses sept principes bibliques et ses trois grandes missions pour vivre à l'image de Jésus-Christ.">
 
   <style>
     :root {
-      --fond: #0b1020;
-      --carte: #151d33;
-      --violet: #a78bfa;
-      --blanc: #ffffff;
-      --texte: #cbd5e1;
+      --background: #0b1020;
+      --surface: #151d33;
+      --surface-light: #1c2742;
+      --purple: #a78bfa;
+      --purple-dark: #6555e8;
+      --white: #ffffff;
+      --text: #cbd5e1;
+      --border: #303b57;
     }
 
     * {
@@ -26,159 +29,309 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--fond);
-      color: var(--blanc);
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--white);
       line-height: 1.7;
     }
 
+    a {
+      transition: 0.2s ease;
+    }
+
     header {
-      background: #11182b;
-      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 7%;
+      background: rgba(11, 16, 32, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .logo {
-      color: var(--violet);
-      font-weight: bold;
-      font-size: 1.3rem;
+      color: var(--purple);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
     }
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--blanc);
+      color: var(--text);
       text-decoration: none;
+      font-size: 0.93rem;
     }
 
     nav a:hover {
-      color: var(--violet);
+      color: var(--purple);
     }
 
     .hero {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px 8%;
-      background: linear-gradient(135deg, #11182b, #30205a);
+      padding: 100px 7%;
+      background:
+        radial-gradient(circle at top right, #48327b 0, transparent 38%),
+        linear-gradient(135deg, #10172b, #20163e 70%, #11182b);
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 20px;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 1000px;
     }
 
     .hero h1 span {
-      color: var(--violet);
+      color: var(--purple);
     }
 
     .hero p {
-      max-width: 750px;
-      margin: 0 auto 25px;
-      color: var(--texte);
+      max-width: 780px;
+      color: var(--text);
       font-size: 1.1rem;
+      margin-bottom: 30px;
     }
 
-    .bouton {
+    .button {
       display: inline-block;
-      background: var(--violet);
-      color: #0b1020;
-      padding: 12px 24px;
-      border-radius: 8px;
+      background: var(--purple);
+      color: #101020;
       text-decoration: none;
       font-weight: bold;
+      padding: 13px 23px;
+      border-radius: 9px;
+    }
+
+    .button:hover {
+      background: #c4b5fd;
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 75px 8%;
+      padding: 80px 7%;
     }
 
-    .titre-section {
+    .section-heading {
       text-align: center;
-      margin-bottom: 35px;
+      max-width: 850px;
+      margin: 0 auto 42px;
     }
 
-    .titre-section h2 {
-      color: var(--violet);
-      font-size: 2rem;
-      margin-bottom: 10px;
+    .section-heading h2 {
+      color: var(--purple);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p,
+    .intro {
+      color: var(--text);
     }
 
     .intro {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
       text-align: center;
-      color: var(--texte);
     }
 
-    .principes {
+    .vision {
+      background: #11182b;
+    }
+
+    .vision-quote {
+      text-align: center;
+      max-width: 800px;
+      margin: 30px auto 0;
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    .vision-reference {
+      text-align: center;
+      margin-top: 12px;
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    .principles-grid,
+    .missions-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 22px;
     }
 
-    .carte {
-      background: var(--carte);
-      border: 1px solid #303b57;
-      padding: 25px;
-      border-radius: 14px;
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      height: 100%;
     }
 
-    .carte h3 {
-      color: var(--violet);
-      margin-bottom: 12px;
+    .card h3 {
+      color: var(--purple);
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 10px 0 14px;
     }
 
-    .versets {
-      color: #c4b5fd;
+    .card p {
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-icon {
+      font-size: 1.9rem;
+    }
+
+    .verses {
+      color: #c4b5fd !important;
       font-weight: bold;
-      margin-top: 15px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
-    .vision {
+    .mission-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .mission-links {
+      display: grid;
+      gap: 10px;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .mission-links a {
+      display: block;
+      padding: 11px 13px;
+      border-radius: 8px;
+      background: var(--surface-light);
+      color: #d7ccff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .mission-links a:hover {
+      background: #303050;
+      color: white;
+    }
+
+    .mission-link {
+      display: inline-block;
+      color: var(--purple);
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: auto;
+      padding-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .mission-link:hover {
+      text-decoration: underline;
+    }
+
+    .engagement {
       text-align: center;
-      background: #11182b;
+      background: linear-gradient(135deg, #21183e, #11182b);
     }
 
-    .vision blockquote {
-      max-width: 800px;
-      margin: 20px auto;
-      font-size: 1.3rem;
-      font-style: italic;
+    .engagement p {
+      max-width: 850px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 1.08rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .logo {
+      display: inline-block;
+      margin-bottom: 16px;
     }
 
     footer {
+      background: #070b15;
+      border-top: 1px solid var(--border);
+      padding: 28px 7%;
       text-align: center;
-      padding: 25px;
-      background: #080c18;
-      color: var(--texte);
+      color: var(--text);
     }
 
-    @media (max-width: 600px) {
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer nav {
+      justify-content: center;
+      margin: 18px 0;
+    }
+
+    footer nav a {
+      color: var(--text);
+    }
+
+    @media (max-width: 760px) {
       header {
-        justify-content: center;
+        position: static;
+        flex-direction: column;
       }
 
       nav {
         justify-content: center;
+        gap: 12px;
       }
 
       .hero {
-        padding: 70px 6%;
+        min-height: auto;
+        padding: 80px 6%;
       }
 
       section {
-        padding: 55px 6%;
+        padding: 60px 6%;
+      }
+
+      .principles-grid,
+      .missions-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -186,66 +339,81 @@
 
 <body>
 
+  <!-- EN-TÊTE ET NAVIGATION -->
   <header>
-    <div class="logo">LEWALIBARI RÉGIS</div>
+    <a class="logo" href="#accueil">LEWALIBARI RÉGIS</a>
 
-    <nav>
+    <nav aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#vision">Ma vision</a>
       <a href="#principes">Mes principes</a>
+      <a href="#missions">Mes missions</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
+
+    <!-- ACCUEIL -->
     <section class="hero" id="accueil">
-      <h1>Vivre à l'image de <span>Christ</span></h1>
+      <div class="eyebrow">Foi · Vision · Service</div>
+
+      <h1>Vivre à l'image de <span>Jésus-Christ</span></h1>
 
       <p>
         Je suis Régis, enfant de Dieu né de nouveau.
-        Ma vision est de devenir toujours plus à l'image de Jésus-Christ,
-        dans mon caractère, mes pensées, mes paroles et mes actions.
+        Ma vision est d'être à l'image de Christ, en laissant
+        Dieu transformer mon caractère, mes pensées, mes paroles
+        et mes actions.
       </p>
 
-      <a class="bouton" href="#principes">
-        Découvrir mes 7 principes
-      </a>
+      <a class="button" href="#vision">Découvrir ma vision</a>
     </section>
 
-    <section id="vision" class="vision">
-      <div class="titre-section">
-        <h2>Ma vision</h2>
+    <!-- MA VISION -->
+    <section class="vision" id="vision">
+      <div class="section-heading">
+        <h2>Ma vision chrétienne</h2>
+        <p>Une vie transformée par Jésus-Christ.</p>
       </div>
 
       <p class="intro">
-        Ma vie appartient à Dieu. Je désire suivre Jésus-Christ,
-        refléter son amour et laisser sa Parole guider mes décisions.
-        Mon objectif est de grandir chaque jour dans la foi,
-        l'humilité, la sainteté et le service des autres.
+        Je suis un enfant de Dieu né de nouveau. Ma vision est
+        d'être à l'image de Christ : marcher dans son amour,
+        refléter son humilité, servir les autres, rechercher
+        la justice et demeurer fidèle à la Parole de Dieu.
+        Je souhaite que mes choix et mes engagements témoignent
+        de ma foi et contribuent à faire connaître le Royaume de Dieu.
       </p>
 
-      <blockquote>
+      <blockquote class="vision-quote">
         « Soyez donc les imitateurs de Dieu, comme des enfants bien-aimés. »
       </blockquote>
 
-      <p><strong>Éphésiens 5:1</strong></p>
+      <p class="vision-reference">Éphésiens 5:1</p>
     </section>
 
+    <!-- LES 7 PRINCIPES -->
     <section id="principes">
-      <div class="titre-section">
+      <div class="section-heading">
         <h2>Mes 7 principes bibliques</h2>
-        <p>Des valeurs pour marcher à l'image de Jésus-Christ.</p>
+        <p>
+          Sept valeurs qui orientent ma marche avec Dieu et mon désir
+          de ressembler chaque jour davantage à Jésus-Christ.
+        </p>
       </div>
 
-      <div class="principes">
+      <div class="principles-grid">
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">❤️</div>
           <h3>1. L'amour : le fondement de tout</h3>
           <p>
-            Aimer Dieu et son prochain, même lorsque cela demande
-            un sacrifice. L'amour est au cœur de la vie chrétienne.
+            Aimer Dieu et son prochain, y compris ses ennemis,
+            et apprendre à donner sans attendre en retour.
+            L'amour est au cœur de la vie chrétienne.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 5:44 · 1 Jean 4:8 · Apocalypse 5:6
           </p>
           <p>
@@ -254,110 +422,246 @@
           </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">🕊️</div>
           <h3>2. Le pardon et la miséricorde</h3>
           <p>
-            Pardonner comme Christ nous pardonne et faire preuve
-            de compassion envers ceux qui nous entourent.
+            Pardonner comme Christ nous pardonne et manifester
+            de la compassion envers ceux qui nous entourent.
+            La miséricorde ouvre un chemin vers la réconciliation.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 18:22 · Luc 23:34 · Apocalypse 7:14
           </p>
-          <p>Le pardon devient un chemin de rédemption.</p>
+          <p>
+            Le pardon devient un chemin de rédemption.
+          </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">🤲</div>
           <h3>3. L'humilité et le service</h3>
           <p>
-            Servir les autres avec un cœur humble, en suivant
-            l'exemple de Jésus qui s'est donné pour nous.
+            Servir avec un cœur humble, sans rechercher les honneurs,
+            en suivant l'exemple de Jésus qui s'est donné pour les autres.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 20:28 · Philippiens 2:8 · Apocalypse 7:17
           </p>
-          <p>L'humilité est finalement élevée à la gloire.</p>
+          <p>
+            L'humilité est finalement élevée à la gloire.
+          </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">⚖️</div>
           <h3>4. La justice et la vérité</h3>
           <p>
             Rechercher ce qui est juste, parler avec vérité
             et agir avec intégrité devant Dieu et les hommes.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 5:6 · Actes 17:31 · Apocalypse 19:11
           </p>
-          <p>La justice annoncée est finalement établie.</p>
+          <p>
+            La justice annoncée est finalement établie.
+          </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">☮️</div>
           <h3>5. La paix</h3>
           <p>
-            Être un artisan de paix, rechercher la réconciliation
-            et garder confiance en Dieu au milieu des difficultés.
+            Être un artisan de paix, favoriser la réconciliation
+            et garder confiance en Dieu même au milieu des difficultés.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 5:9 · Jean 20:19 · Apocalypse 21:4
           </p>
-          <p>La paix intérieure devient une paix éternelle.</p>
+          <p>
+            La paix intérieure devient une paix éternelle.
+          </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">✨</div>
           <h3>6. La sainteté et la fidélité</h3>
           <p>
-            Rester fidèle à Dieu, rechercher la sainteté et
-            persévérer dans la foi, quelles que soient les épreuves.
+            Rechercher la sainteté, rester fidèle à Dieu
+            et persévérer dans la foi quelles que soient les épreuves.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 5:48 · 1 Pierre 1:16 · Apocalypse 2:10
           </p>
-          <p>L'appel de Dieu devient un engagement total.</p>
+          <p>
+            L'appel devient un engagement total.
+          </p>
         </article>
 
-        <article class="carte">
+        <article class="card">
+          <div class="card-icon">🌅</div>
           <h3>7. L'espérance et le Royaume de Dieu</h3>
           <p>
             Annoncer le Royaume de Dieu, vivre dans l'espérance
-            et garder les yeux fixés sur les promesses divines.
+            et garder confiance dans les promesses divines.
           </p>
-          <p class="versets">
+          <p class="verses">
             Matthieu 4:17 · 2 Pierre 3:13 · Apocalypse 21:3
           </p>
-          <p>Le Royaume annoncé devient une réalité éternelle.</p>
+          <p>
+            Le Royaume annoncé devient une réalité éternelle.
+          </p>
         </article>
 
       </div>
     </section>
 
-    <section class="vision">
-      <div class="titre-section">
-        <h2>Mon engagement</h2>
+    <!-- LES 3 GRANDES MISSIONS -->
+    <section class="vision" id="missions">
+      <div class="section-heading">
+        <h2>Trois grandes missions pour être comme Christ</h2>
+        <p>
+          Servir, influencer par les valeurs de Christ et annoncer
+          Jésus-Christ à travers des actions concrètes.
+        </p>
       </div>
 
-      <p class="intro">
-        Avec l'aide de Dieu, je veux laisser Christ transformer
-        mon cœur et mon comportement. Je veux aimer, pardonner,
-        servir, rechercher la vérité, promouvoir la paix,
-        rester fidèle et vivre dans l'espérance.
+      <div class="missions-grid">
+
+        <!-- MISSION 1 -->
+        <article class="card mission-card">
+          <div class="card-icon">🙏</div>
+          <h3>1. Le service</h3>
+
+          <p>
+            Le service occupe une place importante dans ma marche
+            chrétienne, notamment à travers <strong>Commande au Matin</strong>,
+            avec son serviteur l'Apôtre Yvan CASTANOU, ainsi qu'à
+            l'église <strong>Impact Centre Chrétien</strong>.
+          </p>
+
+          <p><strong>Témoignages de Commande au Matin :</strong></p>
+
+          <div class="mission-links">
+            <a href="temoignagecommandeaumatin1.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 01
+            </a>
+
+            <a href="temoignagecommandeaumatin2.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 02
+            </a>
+
+            <a href="temoignagecommandeaumatin3.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 03
+            </a>
+
+            <a href="temoignagecommandeaumatin4.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 04
+            </a>
+
+            <a href="temoignagecommandeaumatin5.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 05
+            </a>
+
+            <a href="temoignagecommandeaumatin6.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 06
+            </a>
+
+            <a href="temoignagecommandeaumatin7.html">
+              Témoignages Commande au Matin avec l'Apôtre Yvan CASTANOU 07
+            </a>
+          </div>
+        </article>
+
+        <!-- MISSION 2 -->
+        <article class="card mission-card">
+          <div class="card-icon">💻</div>
+          <h3>2. Jeunes Prodiges Tech</h3>
+
+          <p>
+            Susciter des leaders en Christ dans la technologie,
+            avec les valeurs de Christ, pour influencer les lois
+            des nations en faveur du Royaume de Dieu.
+          </p>
+
+          <a
+            class="mission-link"
+            href="https://jeunesprodigestech.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visiter le site Jeunes Prodiges Tech ↗
+          </a>
+        </article>
+
+        <!-- MISSION 3 -->
+        <article class="card mission-card">
+          <div class="card-icon">📰</div>
+          <h3>3. Actualités Vue Autrement</h3>
+
+          <p>
+            Le but d'<strong>Actualités Vue Autrement</strong> est
+            de gagner le monde à Jésus-Christ par l'actualité.
+            L'objectif est que les personnes, en lisant les nouvelles,
+            puissent découvrir la joie, la paix et la justice par
+            le Saint-Esprit.
+          </p>
+
+          <a
+            class="mission-link"
+            href="https://actualitesduroyaumededieu.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visiter Actualités Vue Autrement ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT -->
+    <section class="engagement">
+      <div class="section-heading">
+        <h2>Mon engagement devant Dieu</h2>
+      </div>
+
+      <p>
+        Avec l'aide de Dieu, je veux laisser Christ transformer mon cœur
+        et mon comportement. Je veux aimer, pardonner, servir, rechercher
+        la vérité, promouvoir la paix, rester fidèle et vivre dans
+        l'espérance. Que mes engagements contribuent à faire connaître
+        Jésus-Christ et son Royaume.
       </p>
     </section>
 
-    <section id="contact">
-      <div class="titre-section">
-        <h2>Contact</h2>
-        <p>LEWALIBARI RÉGIS</p>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-heading">
+        <h2>LEWALIBARI RÉGIS</h2>
+        <p>
+          Une vision, une foi et des missions : vivre à l'image de Christ.
+        </p>
       </div>
 
-      <p class="intro">
-        Que ma vie reflète chaque jour davantage l'amour
-        et le caractère de Jésus-Christ.
-      </p>
+      <a class="button" href="#accueil">Retour en haut ↑</a>
     </section>
+
   </main>
 
+  <!-- PIED DE PAGE -->
   <footer>
+    <a class="logo" href="#accueil">LEWALIBARI RÉGIS</a>
+
+    <nav aria-label="Navigation de pied de page">
+      <a href="#vision">Ma vision</a>
+      <a href="#principes">Mes principes</a>
+      <a href="#missions">Mes missions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p>Vivre à l'image de Jésus-Christ.</p>
     <p>© 2026 LEWALIBARI RÉGIS — Tous droits réservés.</p>
-    <p>Vivre à l'image de Christ.</p>
   </footer>
 
 </body>
