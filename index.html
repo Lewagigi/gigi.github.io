@@ -1,587 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEWALIBARI RÉGIS </title>
+
+  <title>LEWALIBARI RÉGIS | À l'image de Christ</title>
 
   <meta name="description"
-        content="Découvrez les jeunes prodiges, l'intelligence artificielle,
-        la recherche, les opportunités professionnelles et les témoignages.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+        content="Découvrez la vision chrétienne de Régis : vivre à l'image de Jésus-Christ à travers sept principes bibliques.">
 
   <style>
     :root {
-      --primary: #6555e8;
-      --primary-dark: #4937c7;
-      --navy: #11132b;
-      --text: #242642;
-      --muted: #70738b;
-      --background: #f7f8fc;
-      --white: #ffffff;
-      --border: #e8e9f2;
-      --radius: 20px;
+      --fond: #0b1020;
+      --carte: #151d33;
+      --violet: #a78bfa;
+      --blanc: #ffffff;
+      --texte: #cbd5e1;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--background);
+      font-family: Arial, sans-serif;
+      background: var(--fond);
+      color: var(--blanc);
       line-height: 1.7;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1160px, 90%);
-      margin: 0 auto;
-    }
-
-    /* NAVIGATION */
-
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-      min-height: 78px;
+      background: #11182b;
+      padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      color: var(--navy);
-      white-space: nowrap;
+      color: var(--violet);
+      font-weight: bold;
+      font-size: 1.3rem;
     }
 
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
+    nav {
       display: flex;
-      align-items: center;
-      gap: 24px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 600;
-      color: #555870;
-      transition: color 0.2s;
+    nav a {
+      color: var(--blanc);
+      text-decoration: none;
     }
 
-    .nav-links a:hover {
-      color: var(--primary);
+    nav a:hover {
+      color: var(--violet);
     }
-
-    .nav-cta {
-      padding: 11px 18px;
-      border-radius: 10px;
-      background: var(--primary);
-      color: white !important;
-    }
-
-    /* HERO */
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 100px 0 95px;
-      color: white;
-      background:
-        radial-gradient(ellipse at 85% 20%,
-          rgba(119, 93, 255, 0.38), transparent 40%),
-        linear-gradient(125deg, #101329 0%, #1c2050 58%,
-          #4130a4 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      top: -180px;
-      right: 7%;
-      box-shadow:
-        0 0 0 45px rgba(255,255,255,0.025),
-        0 0 0 90px rgba(255,255,255,0.02);
-    }
-
-    .hero-content {
-      position: relative;
-      max-width: 780px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 14px;
-      margin-bottom: 25px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.6px;
-    }
-
-    .eyebrow span {
-      width: 8px;
-      height: 8px;
-      background: #8ff2ce;
-      border-radius: 50%;
+      text-align: center;
+      padding: 100px 8%;
+      background: linear-gradient(135deg, #11182b, #30205a);
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5.5vw, 66px);
-      line-height: 1.12;
-      letter-spacing: -2.8px;
-      font-weight: 800;
-      margin-bottom: 24px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 20px;
     }
 
-    .hero h1 em {
-      color: #a99cff;
-      font-style: normal;
+    .hero h1 span {
+      color: var(--violet);
     }
 
     .hero p {
-      max-width: 620px;
-      font-size: 17px;
-      color: #d6d7ed;
-      margin-bottom: 32px;
+      max-width: 750px;
+      margin: 0 auto 25px;
+      color: var(--texte);
+      font-size: 1.1rem;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+    .bouton {
+      display: inline-block;
+      background: var(--violet);
+      color: #0b1020;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 23px;
-      border-radius: 11px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform 0.2s, background 0.2s;
+    section {
+      padding: 75px 8%;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    .btn-secondary {
-      color: white;
-      border: 1px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.06);
-    }
-
-    /* BANDEAU */
-
-    .highlights {
-      background: white;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 27px 0;
-      gap: 20px;
-    }
-
-    .highlight {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .highlight-icon {
-      display: grid;
-      place-items: center;
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
-      border-radius: 13px;
-      background: #efedff;
-      font-size: 21px;
-    }
-
-    /* SECTIONS */
-
-    section.content-section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin: 0 auto 42px;
+    .titre-section {
       text-align: center;
+      margin-bottom: 35px;
     }
 
-    .section-label {
-      display: block;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 13px;
+    .titre-section h2 {
+      color: var(--violet);
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
-    .section-heading h2 {
-      font-size: clamp(28px, 4vw, 41px);
-      line-height: 1.25;
-      letter-spacing: -1.4px;
-      margin-bottom: 14px;
-      color: var(--navy);
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--texte);
     }
 
-    .section-heading p {
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    /* CARTES PRINCIPALES */
-
-    .cards-grid {
+    .principes {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 22px;
     }
 
-    .feature-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 270px;
-      padding: 28px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: transform 0.25s, box-shadow 0.25s,
-                  border-color 0.25s;
+    .carte {
+      background: var(--carte);
+      border: 1px solid #303b57;
+      padding: 25px;
+      border-radius: 14px;
     }
 
-    .feature-card:hover {
-      transform: translateY(-6px);
-      border-color: #d5d0ff;
-      box-shadow: 0 18px 45px rgba(36, 31, 90, 0.09);
+    .carte h3 {
+      color: var(--violet);
+      margin-bottom: 12px;
     }
 
-    .card-icon {
-      display: grid;
-      place-items: center;
-      width: 55px;
-      height: 55px;
-      margin-bottom: 23px;
-      border-radius: 16px;
-      font-size: 26px;
-      background: #efedff;
+    .versets {
+      color: #c4b5fd;
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 0.95rem;
     }
 
-    .card-icon.blue {
-      background: #e8f3ff;
-    }
-
-    .card-icon.orange {
-      background: #fff0df;
-    }
-
-    .card-icon.green {
-      background: #e4f9ef;
-    }
-
-    .feature-card h3 {
-      font-size: 19px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-      color: var(--navy);
-    }
-
-    .feature-card p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .card-link span {
-      transition: transform 0.2s;
-    }
-
-    .card-link:hover span {
-      transform: translateX(5px);
-    }
-
-    /* TÉMOIGNAGES */
-
-    .testimonials {
-      background: #f0efff;
-    }
-
-    .testimonials .feature-card {
-      border-color: #e2dfff;
-    }
-
-    .episode {
-      display: inline-block;
-      width: fit-content;
-      padding: 5px 10px;
-      margin-bottom: 14px;
-      border-radius: 6px;
-      background: #efedff;
-      color: var(--primary-dark);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .more-testimonials {
-      display: flex;
-      justify-content: center;
-      margin-top: 34px;
-    }
-
-    .more-testimonials .btn {
-      color: white;
-      background: var(--primary);
-    }
-
-    /* APPEL À L'ACTION */
-
-    .cta {
-      padding: 75px 0;
-      background: white;
-    }
-
-    .cta-box {
-      padding: 54px 30px;
+    .vision {
       text-align: center;
-      color: white;
-      border-radius: 25px;
-      background:
-        radial-gradient(circle at 90% 0%,
-          rgba(151,132,255,0.45), transparent 40%),
-        linear-gradient(120deg, #171a39, #34267f);
+      background: #11182b;
     }
 
-    .cta-box h2 {
-      font-size: clamp(27px, 4vw, 39px);
-      line-height: 1.3;
-      margin-bottom: 14px;
+    .vision blockquote {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.3rem;
+      font-style: italic;
     }
-
-    .cta-box p {
-      max-width: 580px;
-      margin: 0 auto 25px;
-      color: #dddaf9;
-      font-size: 14px;
-    }
-
-    /* FOOTER */
 
     footer {
-      padding: 40px 0 25px;
-      background: #101226;
-      color: white;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-      padding-bottom: 28px;
-    }
-
-    .footer-description {
-      max-width: 370px;
-      margin-top: 12px;
-      color: #aeb0c9;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .footer-links a {
-      color: #d4d5e6;
-      font-size: 12px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      color: #9699b5;
       text-align: center;
-      font-size: 11px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-      .navbar {
-        flex-wrap: wrap;
-        padding: 18px 0;
-      }
-
-      .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px 20px;
-      }
-
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
+      padding: 25px;
+      background: #080c18;
+      color: var(--texte);
     }
 
     @media (max-width: 600px) {
-      .navbar {
+      header {
         justify-content: center;
       }
 
-      .logo {
-        width: 100%;
-        text-align: center;
-      }
-
-      .nav-links {
-        gap: 12px 16px;
-      }
-
-      .nav-links a {
-        font-size: 12px;
-      }
-
-      .nav-cta {
-        padding: 8px 12px;
+      nav {
+        justify-content: center;
       }
 
       .hero {
-        padding: 65px 0;
+        padding: 70px 6%;
       }
 
-      .hero h1 {
-        letter-spacing: -1.6px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .highlight-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .highlight {
-        justify-content: flex-start;
-      }
-
-      section.content-section {
-        padding: 60px 0;
-      }
-
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card {
-        min-height: 245px;
-        padding: 25px;
-      }
-
-      .cta {
-        padding: 50px 0;
-      }
-
-      .cta-box {
-        padding: 38px 22px;
-      }
-
-      .footer-top {
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
+      section {
+        padding: 55px 6%;
       }
     }
   </style>
@@ -589,347 +186,179 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <header>
-    <div class="container navbar">
+    <div class="logo">LEWALIBARI RÉGIS</div>
 
-     <a href="#accueil" class="logo">
-  LEWALIBARI <span>RÉGIS</span>
-           </a>
-
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#domaines">Nos domaines</a>
-        <a href="#recruteurs">Recruteurs</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="#temoignages" class="nav-cta">Découvrir →</a>
-      </nav>
-
-    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#vision">Ma vision</a>
+      <a href="#principes">Mes principes</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-
-    <!-- ACCUEIL -->
     <section class="hero" id="accueil">
-      <div class="container">
-        <div class="hero-content">
+      <h1>Vivre à l'image de <span>Christ</span></h1>
 
-          <div class="eyebrow">
-            <span></span>
-            TALENTS · INNOVATION · OPPORTUNITÉS
-          </div>
+      <p>
+        Je suis Régis, enfant de Dieu né de nouveau.
+        Ma vision est de devenir toujours plus à l'image de Jésus-Christ,
+        dans mon caractère, mes pensées, mes paroles et mes actions.
+      </p>
 
-          <h1>
-            Révéler les talents.<br>
-            Construire <em>l'avenir.</em>
-          </h1>
+      <a class="bouton" href="#principes">
+        Découvrir mes 7 principes
+      </a>
+    </section>
 
+    <section id="vision" class="vision">
+      <div class="titre-section">
+        <h2>Ma vision</h2>
+      </div>
+
+      <p class="intro">
+        Ma vie appartient à Dieu. Je désire suivre Jésus-Christ,
+        refléter son amour et laisser sa Parole guider mes décisions.
+        Mon objectif est de grandir chaque jour dans la foi,
+        l'humilité, la sainteté et le service des autres.
+      </p>
+
+      <blockquote>
+        « Soyez donc les imitateurs de Dieu, comme des enfants bien-aimés. »
+      </blockquote>
+
+      <p><strong>Éphésiens 5:1</strong></p>
+    </section>
+
+    <section id="principes">
+      <div class="titre-section">
+        <h2>Mes 7 principes bibliques</h2>
+        <p>Des valeurs pour marcher à l'image de Jésus-Christ.</p>
+      </div>
+
+      <div class="principes">
+
+        <article class="carte">
+          <h3>1. L'amour : le fondement de tout</h3>
           <p>
-            Un espace dédié aux jeunes prodiges, à l'intelligence
-            artificielle, à la recherche et aux opportunités
-            professionnelles. Des idées, des parcours et des
-            témoignages pour aller plus loin.
+            Aimer Dieu et son prochain, même lorsque cela demande
+            un sacrifice. L'amour est au cœur de la vie chrétienne.
           </p>
+          <p class="versets">
+            Matthieu 5:44 · 1 Jean 4:8 · Apocalypse 5:6
+          </p>
+          <p>
+            L'amour commence comme un appel radical et s'achève
+            dans le don total de soi.
+          </p>
+        </article>
 
-          <div class="hero-buttons">
-            <a href="#domaines" class="btn btn-primary">
-              Explorer nos domaines →
-            </a>
+        <article class="carte">
+          <h3>2. Le pardon et la miséricorde</h3>
+          <p>
+            Pardonner comme Christ nous pardonne et faire preuve
+            de compassion envers ceux qui nous entourent.
+          </p>
+          <p class="versets">
+            Matthieu 18:22 · Luc 23:34 · Apocalypse 7:14
+          </p>
+          <p>Le pardon devient un chemin de rédemption.</p>
+        </article>
 
-            <a href="#temoignages" class="btn btn-secondary">
-              Découvrir les témoignages
-            </a>
-          </div>
+        <article class="carte">
+          <h3>3. L'humilité et le service</h3>
+          <p>
+            Servir les autres avec un cœur humble, en suivant
+            l'exemple de Jésus qui s'est donné pour nous.
+          </p>
+          <p class="versets">
+            Matthieu 20:28 · Philippiens 2:8 · Apocalypse 7:17
+          </p>
+          <p>L'humilité est finalement élevée à la gloire.</p>
+        </article>
 
-        </div>
+        <article class="carte">
+          <h3>4. La justice et la vérité</h3>
+          <p>
+            Rechercher ce qui est juste, parler avec vérité
+            et agir avec intégrité devant Dieu et les hommes.
+          </p>
+          <p class="versets">
+            Matthieu 5:6 · Actes 17:31 · Apocalypse 19:11
+          </p>
+          <p>La justice annoncée est finalement établie.</p>
+        </article>
+
+        <article class="carte">
+          <h3>5. La paix</h3>
+          <p>
+            Être un artisan de paix, rechercher la réconciliation
+            et garder confiance en Dieu au milieu des difficultés.
+          </p>
+          <p class="versets">
+            Matthieu 5:9 · Jean 20:19 · Apocalypse 21:4
+          </p>
+          <p>La paix intérieure devient une paix éternelle.</p>
+        </article>
+
+        <article class="carte">
+          <h3>6. La sainteté et la fidélité</h3>
+          <p>
+            Rester fidèle à Dieu, rechercher la sainteté et
+            persévérer dans la foi, quelles que soient les épreuves.
+          </p>
+          <p class="versets">
+            Matthieu 5:48 · 1 Pierre 1:16 · Apocalypse 2:10
+          </p>
+          <p>L'appel de Dieu devient un engagement total.</p>
+        </article>
+
+        <article class="carte">
+          <h3>7. L'espérance et le Royaume de Dieu</h3>
+          <p>
+            Annoncer le Royaume de Dieu, vivre dans l'espérance
+            et garder les yeux fixés sur les promesses divines.
+          </p>
+          <p class="versets">
+            Matthieu 4:17 · 2 Pierre 3:13 · Apocalypse 21:3
+          </p>
+          <p>Le Royaume annoncé devient une réalité éternelle.</p>
+        </article>
+
       </div>
     </section>
 
-    <!-- POINTS FORTS -->
-    <div class="highlights">
-      <div class="container highlight-grid">
-
-        <div class="highlight">
-          <div class="highlight-icon">💡</div>
-          <span>Innovation et intelligence artificielle</span>
-        </div>
-
-        <div class="highlight">
-          <div class="highlight-icon">🎓</div>
-          <span>Recherche et jeunes talents</span>
-        </div>
-
-        <div class="highlight">
-          <div class="highlight-icon">🚀</div>
-          <span>Carrière et opportunités</span>
-        </div>
-
+    <section class="vision">
+      <div class="titre-section">
+        <h2>Mon engagement</h2>
       </div>
-    </div>
 
-    <!-- DOMAINES -->
-    <section class="content-section" id="domaines">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="section-label">Explorer</span>
-          <h2>Découvrez nos univers</h2>
-          <p>
-            Explorez nos contenus et découvrez les idées,
-            les talents et les initiatives qui font la différence.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-
-          <article class="feature-card">
-            <div class="card-icon">🤖</div>
-            <h3>Intelligence artificielle</h3>
-            <p>
-              Découvrez l'IA, ses applications et les possibilités
-              qu'elle ouvre pour les nouvelles générations.
-            </p>
-            <a class="card-link" href="ia.html">
-              Explorer l'IA <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <div class="card-icon blue">🔬</div>
-            <h3>Prodiges en recherche</h3>
-            <p>
-              Découvrez les talents, les travaux de recherche
-              et les parcours qui repoussent les limites.
-            </p>
-            <a class="card-link" href="prodigerecherche.html">
-              Découvrir la recherche <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card" id="recruteurs">
-            <div class="card-icon orange">💼</div>
-            <h3>Prodiges face aux recruteurs</h3>
-            <p>
-              Explorez les enjeux du recrutement et la manière
-              dont les talents peuvent valoriser leurs compétences.
-            </p>
-            <a class="card-link" href="facerecruteur.html">
-              Voir les contenus <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <div class="card-icon green">🌟</div>
-            <h3>Jeunes prodiges et emploi</h3>
-            <p>
-              Des contenus consacrés aux jeunes talents,
-              à leurs compétences et à leur avenir professionnel.
-            </p>
-            <a class="card-link" href="recruteurprodige.html">
-              Découvrir les parcours <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <div class="card-icon blue">🎯</div>
-            <h3>Compétences et avenir</h3>
-            <p>
-              Inspirez-vous des nouvelles perspectives
-              offertes aux talents dans le monde professionnel.
-            </p>
-            <a class="card-link" href="prodigerecherche.html">
-              En savoir plus <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <div class="card-icon">✨</div>
-            <h3>Inspiration et témoignages</h3>
-            <p>
-              Découvrez des témoignages et des expériences
-              à travers notre collection de contenus.
-            </p>
-            <a class="card-link" href="#temoignages">
-              Lire les témoignages <span>→</span>
-            </a>
-          </article>
-
-        </div>
-      </div>
+      <p class="intro">
+        Avec l'aide de Dieu, je veux laisser Christ transformer
+        mon cœur et mon comportement. Je veux aimer, pardonner,
+        servir, rechercher la vérité, promouvoir la paix,
+        rester fidèle et vivre dans l'espérance.
+      </p>
     </section>
 
-    <!-- TÉMOIGNAGES -->
-    <section class="content-section testimonials" id="temoignages">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="section-label">Paroles et expériences</span>
-          <h2>Les témoignages Commande au Matin</h2>
-          <p>
-            Retrouvez les différentes séries de témoignages
-            Commande au Matin avec l'Apôtre Yvan CASTANOU.
-            Choisissez un épisode pour accéder à son contenu.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-
-          <article class="feature-card">
-            <span class="episode">SÉRIE PRINCIPALE</span>
-            <div class="card-icon">🎙️</div>
-            <h3>Témoignages Commande au Matin</h3>
-            <p>
-              Accédez à la première page de la collection
-              de témoignages.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin.html">
-              Voir les témoignages <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 01</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 01</h3>
-            <p>
-              Retrouvez le premier volet de cette collection.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin1.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 02</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 02</h3>
-            <p>
-              Accédez au deuxième volet de la collection.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin2.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 03</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 03</h3>
-            <p>
-              Retrouvez les témoignages de ce troisième volet.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin3.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 04</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 04</h3>
-            <p>
-              Découvrez le quatrième volet de la collection.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin4.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 05</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 05</h3>
-            <p>
-              Poursuivez votre découverte avec cet épisode.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin5.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 06</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 06</h3>
-            <p>
-              Accédez au sixième volet de cette série.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin6.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-          <article class="feature-card">
-            <span class="episode">ÉPISODE 07</span>
-            <div class="card-icon">📖</div>
-            <h3>Témoignages — 07</h3>
-            <p>
-              Découvrez le septième volet de la collection.
-            </p>
-            <a class="card-link" href="temoignagecommandeaumatin7.html">
-              Consulter l'épisode <span>→</span>
-            </a>
-          </article>
-
-        </div>
+    <section id="contact">
+      <div class="titre-section">
+        <h2>Contact</h2>
+        <p>LEWALIBARI RÉGIS</p>
       </div>
-    </section>
 
-    <!-- APPEL À L'ACTION -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Le potentiel n'attend pas.</h2>
-          <p>
-            Explorez les contenus, développez votre curiosité
-            et découvrez de nouvelles perspectives pour l'avenir.
-          </p>
-          <a href="#domaines" class="btn btn-primary">
-            Commencer l'exploration →
-          </a>
-        </div>
-      </div>
+      <p class="intro">
+        Que ma vie reflète chaque jour davantage l'amour
+        et le caractère de Jésus-Christ.
+      </p>
     </section>
-
   </main>
 
-  <!-- PIED DE PAGE -->
   <footer>
-    <div class="container">
-
-      <div class="footer-top">
-        <div>
-         <a href="#accueil" class="logo" style="color:white">
-  LEWALIBARI <span>RÉGIS</span>
-</a>
-          <p class="footer-description">
-            Un espace consacré aux talents, à l'innovation,
-            à la recherche et aux témoignages.
-          </p>
-        </div>
-
-        <nav class="footer-links" aria-label="Navigation de pied de page">
-          <a href="#accueil">Accueil</a>
-          <a href="#domaines">Nos domaines</a>
-          <a href="ia.html">Intelligence artificielle</a>
-          <a href="#recruteurs">Recruteurs</a>
-          <a href="#temoignages">Témoignages</a>
-        </nav>
-      </div>
-
-      <div class="copyright">
-        © <span id="year"></span> Prodige En Entreprise.
-        Tous droits réservés.
-      </div>
-
-    </div>
+    <p>© 2026 LEWALIBARI RÉGIS — Tous droits réservés.</p>
+    <p>Vivre à l'image de Christ.</p>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
 </html>
