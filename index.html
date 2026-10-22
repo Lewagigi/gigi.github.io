@@ -790,11 +790,13 @@
       box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
     }
     .mission-card h3 { color: var(--accent, #a78bfa); margin: 10px 0 12px; }
-    .mission-card p { margin-bottom: 14px; }
+    /* Texte descriptif des missions en blanc pour améliorer le contraste */
+    .mission-card p,
+    .mission-card p strong { color: #ffffff !important; }
     .mission-icon { font-size: 1.8rem; }
     .mission-links { display: grid; gap: 10px; margin-top: 18px; }
     .mission-links a, .mission-link {
-      color: var(--accent, #a78bfa);
+      color: #ffffff !important;
       text-decoration: none;
       font-weight: 600;
       overflow-wrap: anywhere;
@@ -917,73 +919,45 @@
 
         <div class="principles-grid">
           <article class="principle-card">
-            <div class="principle-top"><div class="principle-emoji">❤️</div><div><div class="principle-number">Principe 01</div><h3>L’amour — fondement de tout</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Aimez vos ennemis. »<cite>Matthieu 5:44</cite></blockquote>
-            <p><strong>Des Évangiles aux Épîtres et à l’Apocalypse</strong></p>
-            <blockquote>« Dieu est amour. »<cite>1 Jean 4:8</cite></blockquote>
-            <blockquote>Jean voit « un Agneau qui était là comme immolé ». <cite>Apocalypse 5:6</cite></blockquote>
-            <div class="principle-conclusion">→ L’amour commence comme un appel radical et s’achève par un don total.</div>
+            <div class="principle-top"><div class="principle-emoji">❤️</div><div><div class="principle-number">Principe 01</div><h3>L’amour — le fondement de tout</h3></div></div>
+            <p><strong>Versets :</strong> Matthieu 5:44 ; 1 Jean 4:8 ; Apocalypse 5:6.</p>
+            <p>L’amour se manifeste par la fidélité, le partage des connaissances et des opportunités, ainsi que par l’engagement à préserver la confiance et à favoriser la réussite des autres. Il commence par un appel radical à aimer et s’accomplit dans le don de soi.</p>
           </article>
 
           <article class="principle-card">
-            <div class="principle-top"><div class="principle-emoji">🤲</div><div><div class="principle-number">Principe 02</div><h3>Le pardon et la miséricorde</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Pardonne jusqu’à soixante-dix fois sept fois. »<cite>Matthieu 18:22</cite></blockquote>
-            <p><strong>De la Croix à l’Église, jusqu’à la fin</strong></p>
-            <blockquote>« Père, pardonne-leur. »<cite>Luc 23:34</cite></blockquote>
-            <blockquote>Leurs robes ont été lavées dans le sang de l’Agneau. <cite>Apocalypse 7:14</cite></blockquote>
-            <div class="principle-conclusion">→ Le pardon devient rédemption.</div>
+            <div class="principle-top"><div class="principle-emoji">🫶</div><div><div class="principle-number">Principe 02</div><h3>Le pardon et la miséricorde</h3></div></div>
+            <p><strong>Versets :</strong> Matthieu 18:22 ; Luc 23:34 ; Apocalypse 7:14.</p>
+            <p>Le pardon consiste à accueillir les autres avec compassion sans les réduire à leurs erreurs, tout en assumant ses propres responsabilités. La miséricorde permet de restaurer la confiance, de prendre soin des autres et de favoriser leur relèvement.</p>
           </article>
 
           <article class="principle-card">
             <div class="principle-top"><div class="principle-emoji">🌱</div><div><div class="principle-number">Principe 03</div><h3>L’humilité et le service</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Le Fils de l’homme est venu, non pour être servi, mais pour servir. »<cite>Matthieu 20:28</cite></blockquote>
-            <p><strong>De Philippiens à l’Apocalypse</strong></p>
-            <blockquote>« Il s’est humilié lui-même. »<cite>Philippiens 2:8</cite></blockquote>
-            <blockquote>L’Agneau les conduira aux sources des eaux de la vie. <cite>Voir Apocalypse 7:17</cite></blockquote>
-            <div class="principle-conclusion">→ L’humilité est élevée à la gloire.</div>
+            <p><strong>Versets :</strong> Matthieu 20:28 ; Philippiens 2:8 ; Apocalypse 7:17.</p>
+            <p>L’humilité consiste à reconnaître ses limites, à accepter la correction et à mettre son ego de côté pour servir les autres. Elle se traduit par le partage des connaissances, des contacts et des opportunités afin de contribuer à la réussite de chacun.</p>
           </article>
 
           <article class="principle-card">
             <div class="principle-top"><div class="principle-emoji">⚖️</div><div><div class="principle-number">Principe 04</div><h3>La justice et la vérité</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Heureux ceux qui ont faim et soif de la justice. »<cite>Matthieu 5:6</cite></blockquote>
-            <p><strong>Des Épîtres à l’Apocalypse</strong></p>
-            <blockquote>Dieu a fixé un jour où il jugera le monde avec justice. <cite>Actes 17:31</cite></blockquote>
-            <blockquote>« Il juge et combat avec justice. »<cite>Apocalypse 19:11</cite></blockquote>
-            <div class="principle-conclusion">→ La justice annoncée est finalement établie.</div>
+            <p><strong>Versets :</strong> Matthieu 5:6 ; Actes 17:31 ; Apocalypse 19:11.</p>
+            <p>La justice et la vérité exigent d’agir avec intégrité, transparence et honnêteté, sans manipulation ni dissimulation. Elles nous conduisent à défendre les autres, à reconnaître leurs contributions et à favoriser l’égalité des chances.</p>
           </article>
 
           <article class="principle-card">
             <div class="principle-top"><div class="principle-emoji">🕊️</div><div><div class="principle-number">Principe 05</div><h3>La paix</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Heureux ceux qui procurent la paix. »<cite>Matthieu 5:9</cite></blockquote>
-            <p><strong>De la Résurrection à l’Apocalypse</strong></p>
-            <blockquote>« La paix soit avec vous. »<cite>Jean 20:19</cite></blockquote>
-            <blockquote>Il n’y aura plus ni mort, ni deuil, ni cri, ni douleur. <cite>Apocalypse 21:4</cite></blockquote>
-            <div class="principle-conclusion">→ La paix intérieure devient paix éternelle.</div>
+            <p><strong>Versets :</strong> Matthieu 5:9 ; Jean 20:19 ; Apocalypse 21:4.</p>
+            <p>La paix consiste à rester stable et maître de soi face aux difficultés, tout en recherchant des solutions constructives. Elle se manifeste par l’encouragement, le soutien et le partage des opportunités pour aider les autres à persévérer.</p>
           </article>
 
           <article class="principle-card">
             <div class="principle-top"><div class="principle-emoji">🔥</div><div><div class="principle-number">Principe 06</div><h3>La sainteté et la fidélité</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Soyez donc parfaits, comme votre Père céleste est parfait. »<cite>Matthieu 5:48</cite></blockquote>
-            <p><strong>Des Épîtres à l’Apocalypse</strong></p>
-            <blockquote>« Soyez saints, car je suis saint. »<cite>1 Pierre 1:16</cite></blockquote>
-            <blockquote>« Sois fidèle jusqu’à la mort. »<cite>Apocalypse 2:10</cite></blockquote>
-            <div class="principle-conclusion">→ L’appel devient engagement total.</div>
+            <p><strong>Versets :</strong> Matthieu 5:48 ; 1 Pierre 1:16 ; Apocalypse 2:10.</p>
+            <p>La sainteté et la fidélité nous appellent à respecter les principes de Dieu, à maîtriser nos désirs et à résister aux tentations du pouvoir et de la célébrité. Elles nous poussent à honorer nos engagements et à rester cohérents avec nos convictions dans nos paroles comme dans nos actes.</p>
           </article>
 
           <article class="principle-card">
             <div class="principle-top"><div class="principle-emoji">🌟</div><div><div class="principle-number">Principe 07</div><h3>L’espérance et le Royaume de Dieu</h3></div></div>
-            <p><strong>Dans Matthieu</strong></p>
-            <blockquote>« Repentez-vous, car le royaume des cieux est proche. »<cite>Matthieu 4:17</cite></blockquote>
-            <p><strong>De l’Église à l’Apocalypse</strong></p>
-            <blockquote>Nous attendons de nouveaux cieux et une nouvelle terre. <cite>2 Pierre 3:13</cite></blockquote>
-            <blockquote>« Voici le tabernacle de Dieu avec les hommes ! »<cite>Apocalypse 21:3</cite></blockquote>
-            <div class="principle-conclusion">→ Le Royaume annoncé devient réalité éternelle.</div>
+            <p><strong>Versets :</strong> Matthieu 4:17 ; 2 Pierre 3:13 ; Apocalypse 21:3.</p>
+            <p>L’espérance nous encourage à persévérer et à aider les autres à surmonter le découragement pour saisir de nouvelles opportunités. En plaçant Dieu au centre de notre leadership, nous souhaitons former des leaders dans la tech et faciliter l’accès aux stages, à l’alternance et à l’emploi pour contribuer à l’avancement de son Royaume.</p>
           </article>
         </div>
 
