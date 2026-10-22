@@ -4,24 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="LEWALIBARI RÉGIS : ma vision chrétienne, mes valeurs, mes principes bibliques et mes missions pour vivre à l'image de Jésus-Christ.">
   <title>LEWALIBARI RÉGIS | Vivre à l'image de Christ</title>
-  <meta name="description" content="Découvrez la vision chrétienne de Régis, ses principes bibliques, ses valeurs et ses trois grandes missions.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #6555e8;
-      --primary-dark: #4937c7;
       --navy: #11132b;
-      --text: #242642;
+      --purple: #6555e8;
+      --purple-light: #efedff;
+      --text: #292b45;
       --muted: #70738b;
       --background: #f7f8fc;
       --white: #ffffff;
-      --border: #e8e9f2;
-      --radius: 18px;
+      --border: #e7e8f1;
     }
 
     * {
@@ -36,14 +31,14 @@
     }
 
     body {
-      font-family: 'Inter', Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--background);
       line-height: 1.7;
     }
 
     a {
-      text-decoration: none;
+      transition: .2s ease;
     }
 
     .container {
@@ -54,131 +49,143 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(12px);
+      z-index: 10;
+      background: rgba(255,255,255,.97);
       border-bottom: 1px solid var(--border);
     }
 
     .navbar {
       min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .logo {
-      font-size: 18px;
-      font-weight: 800;
       color: var(--navy);
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
       white-space: nowrap;
     }
 
     .logo span {
-      color: var(--primary);
+      color: var(--purple);
     }
 
     nav {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 16px;
     }
 
     nav a {
-      color: #555870;
+      color: var(--text);
+      text-decoration: none;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: var(--purple);
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 105px 0;
+      padding: 85px 0;
       color: white;
       background:
-        radial-gradient(ellipse at 85% 20%, rgba(119,93,255,.4), transparent 40%),
-        linear-gradient(125deg, #101329, #1c2050 58%, #4934ae);
+        radial-gradient(circle at 85% 20%, #48358b, transparent 40%),
+        linear-gradient(125deg, #101329, #242052 65%, #4934ae);
     }
 
-    .hero-content {
-      max-width: 790px;
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
     }
 
     .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.08);
-      border-radius: 30px;
+      color: #c1b5ff;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.13;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
-      color: #b3a7ff;
+      display: block;
+      color: #b9a7ff;
     }
 
     .hero p {
-      max-width: 680px;
-      color: #dedff2;
-      font-size: 16px;
-      margin-bottom: 30px;
+      color: #e1e1f1;
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+
+    .hero-photo {
+      text-align: center;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      max-width: 430px;
+      max-height: 530px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 24px;
+      border: 3px solid rgba(255,255,255,.22);
+      box-shadow: 0 25px 65px rgba(0,0,0,.3);
     }
 
     .button {
       display: inline-block;
       padding: 13px 22px;
-      border-radius: 10px;
-      background: white;
-      color: var(--primary-dark);
-      font-weight: 800;
-      font-size: 13px;
-      transition: .2s;
+      border-radius: 9px;
+      background: #b9a7ff;
+      color: #15132d;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .button:hover {
-      transform: translateY(-3px);
+      background: white;
+      transform: translateY(-2px);
     }
 
-    section.content-section {
-      padding: 78px 0;
+    section {
+      padding: 76px 0;
     }
 
     .section-heading {
-      max-width: 760px;
       text-align: center;
+      max-width: 800px;
       margin: 0 auto 40px;
     }
 
     .section-label {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
+      color: var(--purple);
       font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .section-heading h2 {
       color: var(--navy);
-      font-size: clamp(27px, 4vw, 40px);
+      font-size: clamp(27px, 4vw, 39px);
       line-height: 1.25;
-      margin-bottom: 14px;
+      margin: 10px 0 15px;
     }
 
     .section-heading p {
@@ -192,24 +199,23 @@
 
     .vision-text {
       max-width: 850px;
-      margin: auto;
-      color: var(--muted);
       text-align: center;
+      color: var(--muted);
+      margin: auto;
     }
 
     .vision-quote {
-      max-width: 800px;
-      margin: 28px auto 8px;
+      max-width: 780px;
       text-align: center;
+      margin: 25px auto 5px;
       font-size: 20px;
       font-style: italic;
-      color: var(--navy);
     }
 
     .verse-reference {
       text-align: center;
-      color: var(--primary);
-      font-weight: 800;
+      color: var(--purple);
+      font-weight: bold;
     }
 
     .grid {
@@ -219,22 +225,23 @@
     }
 
     .card {
+      min-width: 0;
       padding: 25px;
-      background: white;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 8px 25px rgba(30,28,75,.035);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(30,28,75,.04);
     }
 
     .card-icon {
       display: grid;
       place-items: center;
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: var(--purple-light);
+      font-size: 23px;
       margin-bottom: 15px;
-      border-radius: 14px;
-      background: #efedff;
-      font-size: 24px;
     }
 
     .card h3 {
@@ -250,18 +257,16 @@
       margin: 10px 0;
     }
 
-    .card .references {
-      color: var(--primary-dark);
-      font-weight: 800;
-      font-size: 12px;
+    .references {
+      color: var(--purple) !important;
+      font-weight: bold;
     }
 
-    .card .conclusion {
+    .conclusion {
+      background: #f3f1ff;
+      color: #4e438b !important;
+      border-radius: 8px;
       padding: 12px;
-      border-radius: 9px;
-      background: #f4f2ff;
-      color: #4d428f;
-      font-weight: 600;
     }
 
     .values-section {
@@ -270,13 +275,13 @@
 
     .value-principle {
       display: inline-block;
-      padding: 5px 10px;
-      margin: 2px 0 8px;
+      color: #4937b5;
       background: #efedff;
-      color: var(--primary-dark);
-      border-radius: 6px;
+      border-radius: 7px;
+      padding: 5px 9px;
+      margin: 0 0 8px;
       font-size: 11px;
-      font-weight: 800;
+      font-weight: bold;
     }
 
     .missions-grid {
@@ -288,7 +293,6 @@
     .mission-card {
       display: flex;
       flex-direction: column;
-      min-width: 0;
     }
 
     .mission-links {
@@ -299,27 +303,28 @@
 
     .mission-links a {
       display: block;
-      padding: 10px 12px;
+      padding: 11px;
       border-radius: 8px;
-      background: #f1efff;
-      color: var(--primary-dark);
+      background: #f0eeff;
+      color: #4937b5;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: bold;
+      text-decoration: none;
       overflow-wrap: anywhere;
     }
 
     .mission-links a:hover {
-      background: #e3dfff;
+      background: #ded9ff;
     }
 
     .mission-link {
-      display: inline-block;
-      margin-top: auto;
-      padding-top: 16px;
-      color: var(--primary-dark);
-      font-weight: 800;
+      color: var(--purple);
       font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
       overflow-wrap: anywhere;
+      margin-top: auto;
+      padding-top: 18px;
     }
 
     .mission-link:hover {
@@ -328,79 +333,96 @@
 
     .commitment {
       color: white;
-      background: linear-gradient(120deg, #171a39, #34267f);
+      background: linear-gradient(125deg, #11132b, #382779);
     }
 
     .commitment .section-heading h2 {
       color: white;
     }
 
-    .commitment .section-heading p {
-      color: #deddf5;
+    .commitment .section-heading p,
+    .commitment-text {
+      color: #e0def5;
     }
 
     .commitment-text {
       max-width: 850px;
       margin: auto;
-      color: #e1defe;
       text-align: center;
     }
 
-    footer {
-      padding: 30px 0;
-      background: #101329;
-      color: #d7d8e8;
+    .contact {
       text-align: center;
+      background: white;
+    }
+
+    footer {
+      background: #101329;
+      color: #d9d9e9;
+      text-align: center;
+      padding: 30px 0;
     }
 
     footer .logo {
       color: white;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-
-    footer p {
-      font-size: 12px;
-      margin: 6px 0;
     }
 
     footer nav {
       justify-content: center;
-      margin: 18px 0;
+      margin: 17px 0;
     }
 
     footer nav a {
-      color: #d7d8e8;
+      color: #d9d9e9;
+    }
+
+    footer p {
+      font-size: 12px;
+      margin: 5px;
     }
 
     @media (max-width: 900px) {
       .missions-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-    }
 
-    @media (max-width: 650px) {
       .navbar {
         padding: 16px 0;
         flex-direction: column;
       }
+    }
 
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
-
+    @media (max-width: 650px) {
       .hero {
-        padding: 75px 0;
+        padding: 55px 0;
       }
 
-      section.content-section {
-        padding: 58px 0;
-      }
-
+      .hero-layout,
       .grid,
       .missions-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        grid-row: 1;
+      }
+
+      .hero-photo img {
+        max-width: 300px;
+        max-height: 380px;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 11px;
       }
     }
   </style>
@@ -419,46 +441,49 @@
         <a href="#principes">Principes</a>
         <a href="#valeurs">Mes valeurs</a>
         <a href="#missions">Mes missions</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- ACCUEIL -->
+    <!-- ACCUEIL AVEC PHOTO -->
     <section class="hero" id="accueil">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Ma foi · Ma vision · Mes valeurs</div>
+      <div class="container hero-layout">
 
-          <h1>Vivre à l'image de <span>Jésus-Christ</span></h1>
-           
+        <div class="hero-text">
+          <div class="eyebrow">Foi · Vision · Service</div>
+
+          <h1>
+            Vivre à l'image de
+            <span>Jésus-Christ</span>
+          </h1>
 
           <p>
             Je suis Régis, enfant de Dieu né de nouveau.
-            Ma vision est d'être à l'image de Christ, en laissant
-            Dieu transformer mon caractère, mes pensées, mes paroles
-            et mes actions. Je veux servir, aimer et agir selon
-            les principes du Royaume de Dieu.
+            Ma vision est d'être à l'image de Christ, en laissant Dieu
+            transformer mon caractère, mes pensées, mes paroles
+            et mes actions.
           </p>
 
-          <a class="button" href="#vision">Découvrir ma vision ↓</a>
+          <a class="button" href="#vision">Découvrir ma vision →</a>
         </div>
+
+        <div class="hero-photo">
+          <!-- Place ta photo dans le même dossier et nomme-la regis.jpg -->
+          <img src="regis.jpg" alt="Portrait de Régis">
+        </div>
+
       </div>
     </section>
 
     <!-- MA VISION -->
-    <section class="content-section vision-section" id="vision">
+    <section class="vision-section" id="vision">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Ma raison d'être</span>
           <h2>Ma vision chrétienne</h2>
-
-           <div class="hero-photo">
-      <img
-        src="regis.jpg"
-        alt="Portrait de Régis"
-      >
           <p>Une vie transformée par Jésus-Christ et consacrée à Dieu.</p>
         </div>
 
@@ -467,8 +492,8 @@
           toujours plus à l'image de Christ : marcher dans son amour,
           refléter son humilité, servir les autres, rechercher la justice,
           vivre dans la sainteté et demeurer fidèle à la Parole de Dieu.
-          Je souhaite que mes décisions et mes engagements témoignent
-          de ma foi et contribuent à faire connaître le Royaume de Dieu.
+          Je souhaite que mes décisions et mes engagements témoignent de
+          ma foi et contribuent à faire connaître le Royaume de Dieu.
         </p>
 
         <blockquote class="vision-quote">
@@ -479,7 +504,7 @@
     </section>
 
     <!-- LES 7 PRINCIPES BIBLIQUES -->
-    <section class="content-section" id="principes">
+    <section id="principes">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Mes fondements bibliques</span>
@@ -498,9 +523,10 @@
             <p>
               Aimer Dieu et son prochain, y compris ses ennemis,
               et apprendre à donner sans attendre en retour.
-              L'amour est au cœur de la vie chrétienne.
             </p>
-            <p class="references">Matthieu 5:44 · 1 Jean 4:8 · Apocalypse 5:6</p>
+            <p class="references">
+              Matthieu 5:44 · 1 Jean 4:8 · Apocalypse 5:6
+            </p>
             <p class="conclusion">
               L'amour commence comme un appel radical et s'achève
               dans le don total de soi.
@@ -514,8 +540,12 @@
               Pardonner comme Christ nous pardonne et manifester
               de la compassion envers ceux qui nous entourent.
             </p>
-            <p class="references">Matthieu 18:22 · Luc 23:34 · Apocalypse 7:14</p>
-            <p class="conclusion">Le pardon devient un chemin de rédemption.</p>
+            <p class="references">
+              Matthieu 18:22 · Luc 23:34 · Apocalypse 7:14
+            </p>
+            <p class="conclusion">
+              Le pardon devient un chemin de rédemption.
+            </p>
           </article>
 
           <article class="card">
@@ -525,19 +555,27 @@
               Servir avec un cœur humble, sans rechercher les honneurs,
               en suivant l'exemple de Jésus qui s'est donné pour les autres.
             </p>
-            <p class="references">Matthieu 20:28 · Philippiens 2:8 · Apocalypse 7:17</p>
-            <p class="conclusion">L'humilité est finalement élevée à la gloire.</p>
+            <p class="references">
+              Matthieu 20:28 · Philippiens 2:8 · Apocalypse 7:17
+            </p>
+            <p class="conclusion">
+              L'humilité est finalement élevée à la gloire.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon">⚖️</div>
             <h3>4. La justice et la vérité</h3>
             <p>
-              Rechercher ce qui est juste, parler avec vérité
-              et agir avec intégrité devant Dieu et les hommes.
+              Rechercher ce qui est juste, parler avec vérité et agir
+              avec intégrité devant Dieu et les hommes.
             </p>
-            <p class="references">Matthieu 5:6 · Actes 17:31 · Apocalypse 19:11</p>
-            <p class="conclusion">La justice annoncée est finalement établie.</p>
+            <p class="references">
+              Matthieu 5:6 · Actes 17:31 · Apocalypse 19:11
+            </p>
+            <p class="conclusion">
+              La justice annoncée est finalement établie.
+            </p>
           </article>
 
           <article class="card">
@@ -547,8 +585,12 @@
               Être un artisan de paix, favoriser la réconciliation
               et garder confiance en Dieu au milieu des difficultés.
             </p>
-            <p class="references">Matthieu 5:9 · Jean 20:19 · Apocalypse 21:4</p>
-            <p class="conclusion">La paix intérieure devient une paix éternelle.</p>
+            <p class="references">
+              Matthieu 5:9 · Jean 20:19 · Apocalypse 21:4
+            </p>
+            <p class="conclusion">
+              La paix intérieure devient une paix éternelle.
+            </p>
           </article>
 
           <article class="card">
@@ -558,8 +600,12 @@
               Rechercher la sainteté, rester fidèle à Dieu et persévérer
               dans la foi quelles que soient les épreuves.
             </p>
-            <p class="references">Matthieu 5:48 · 1 Pierre 1:16 · Apocalypse 2:10</p>
-            <p class="conclusion">L'appel devient un engagement total.</p>
+            <p class="references">
+              Matthieu 5:48 · 1 Pierre 1:16 · Apocalypse 2:10
+            </p>
+            <p class="conclusion">
+              L'appel devient un engagement total.
+            </p>
           </article>
 
           <article class="card">
@@ -569,7 +615,9 @@
               Annoncer le Royaume de Dieu, vivre dans l'espérance
               et garder confiance dans les promesses divines.
             </p>
-            <p class="references">Matthieu 4:17 · 2 Pierre 3:13 · Apocalypse 21:3</p>
+            <p class="references">
+              Matthieu 4:17 · 2 Pierre 3:13 · Apocalypse 21:3
+            </p>
             <p class="conclusion">
               Le Royaume annoncé devient une réalité éternelle.
             </p>
@@ -580,7 +628,7 @@
     </section>
 
     <!-- MES 7 VALEURS -->
-    <section class="content-section values-section" id="valeurs">
+    <section class="values-section" id="valeurs">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">Mon caractère et mes engagements</span>
@@ -616,7 +664,9 @@
           <article class="card">
             <div class="card-icon">⚓</div>
             <h3>3. La stabilité</h3>
-            <span class="value-principle">Principe biblique : La paix et l'espérance</span>
+            <span class="value-principle">
+              Principe biblique : La paix et l'espérance
+            </span>
             <p>
               La capacité à demeurer ferme, constant et prévisible face
               aux pressions, aux critiques et aux épreuves.
@@ -626,7 +676,9 @@
           <article class="card">
             <div class="card-icon">🔎</div>
             <h3>4. L'intégrité personnelle et envers ceux que l'on sert</h3>
-            <span class="value-principle">Principe biblique : La justice et la vérité</span>
+            <span class="value-principle">
+              Principe biblique : La justice et la vérité
+            </span>
             <p>
               La cohérence entre les convictions professées,
               les décisions prises et les actes accomplis,
@@ -637,7 +689,9 @@
           <article class="card">
             <div class="card-icon">💬</div>
             <h3>5. Une communication responsable</h3>
-            <span class="value-principle">Principe biblique : La vérité et la justice</span>
+            <span class="value-principle">
+              Principe biblique : La vérité et la justice
+            </span>
             <p>
               La capacité à communiquer avec franchise, transparence
               et discernement, sans mensonge, manipulation ni dissimulation.
@@ -647,7 +701,9 @@
           <article class="card">
             <div class="card-icon">🌱</div>
             <h3>6. L'humilité et la maturité</h3>
-            <span class="value-principle">Principe biblique : Le service et la miséricorde</span>
+            <span class="value-principle">
+              Principe biblique : Le service et la miséricorde
+            </span>
             <p>
               La disposition à reconnaître ses limites, assumer ses erreurs,
               recevoir la correction et rechercher une restauration responsable.
@@ -657,7 +713,9 @@
           <article class="card">
             <div class="card-icon">🙏</div>
             <h3>7. La crainte de Dieu</h3>
-            <span class="value-principle">Principe biblique : La sainteté et le Royaume de Dieu</span>
+            <span class="value-principle">
+              Principe biblique : La sainteté et le Royaume de Dieu
+            </span>
             <p>
               La reconnaissance de l'autorité suprême de Dieu, qui conduit
               à l'obéissance, à la redevabilité et au refus de se placer
@@ -669,8 +727,8 @@
       </div>
     </section>
 
-    <!-- TROIS GRANDES MISSIONS -->
-    <section class="content-section" id="missions">
+    <!-- LES 3 GRANDES MISSIONS -->
+    <section id="missions">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">La foi mise en action</span>
@@ -683,7 +741,7 @@
 
         <div class="missions-grid">
 
-          <!-- MISSION 1 : LE SERVICE -->
+          <!-- MISSION 1 : SERVICE -->
           <article class="card mission-card">
             <div class="card-icon">🙏</div>
             <h3>1. Le service</h3>
@@ -762,11 +820,13 @@
       </div>
     </section>
 
-    <!-- ENGAGEMENT -->
-    <section class="content-section commitment">
+    <!-- MON ENGAGEMENT -->
+    <section class="commitment">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label" style="color:#b9adff">Mon engagement</span>
+          <span class="section-label" style="color:#b9a7ff">
+            Mon engagement
+          </span>
           <h2>Une vie consacrée à Christ</h2>
           <p>
             Mes principes, mes valeurs et mes missions sont appelés
@@ -785,12 +845,30 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Ma foi en action</span>
+          <h2>LEWALIBARI RÉGIS</h2>
+          <p>
+            Une vision, des valeurs et des missions :
+            vivre à l'image de Jésus-Christ.
+          </p>
+        </div>
+
+        <a class="button" href="#accueil">Retour en haut ↑</a>
+      </div>
+    </section>
+
   </main>
 
   <!-- PIED DE PAGE -->
   <footer>
     <div class="container">
-      <a class="logo" href="#accueil">LEWALIBARI <span>RÉGIS</span></a>
+      <a class="logo" href="#accueil">
+        LEWALIBARI <span>RÉGIS</span>
+      </a>
 
       <nav aria-label="Navigation de pied de page">
         <a href="#vision">Ma vision</a>
