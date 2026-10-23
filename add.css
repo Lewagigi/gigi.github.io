@@ -1,26 +1,31 @@
 
-/* =====================================================
-   LEWALIBARI RÉGIS — FEUILLE DE STYLE COMPLÈTE
-   Menu élégant • Mes valeurs • Responsive • 7 principes
-   ===================================================== */
+/* =========================================================
+   LEWALIBARI RÉGIS — CSS COMPLET
+   Design premium • Navigation • Sous-menu • Toutes sections
+   Responsive ordinateur, tablette et téléphone
+   ========================================================= */
 
-/* 1. VARIABLES */
+/* 1. PALETTE ET VARIABLES */
 :root {
     --primary: #172b4d;
     --primary-light: #243f68;
+    --primary-deep: #101f38;
     --gold: #c9a45c;
     --gold-light: #f5efe2;
+    --gold-pale: #fcf8ef;
     --background: #fbfaf7;
     --surface: #ffffff;
     --text: #263238;
     --muted: #667085;
     --border: #e8e3d9;
-    --shadow: 0 8px 24px rgba(23, 43, 77, 0.08);
-    --shadow-hover: 0 16px 35px rgba(23, 43, 77, 0.13);
-    --radius: 16px;
+    --green: #386b54;
+    --radius: 18px;
+    --shadow: 0 8px 24px rgba(23, 43, 77, 0.07);
+    --shadow-hover: 0 16px 36px rgba(23, 43, 77, 0.13);
+    --transition: 0.25s ease;
 }
 
-/* 2. RÉINITIALISATION */
+/* 2. BASE */
 *,
 *::before,
 *::after {
@@ -39,11 +44,11 @@ body {
     min-width: 0;
     margin: 0;
     padding: 0;
+    background: var(--background);
+    color: var(--text);
     font-family: "Inter", Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    color: var(--text);
-    background: var(--background);
     overflow-wrap: break-word;
 }
 
@@ -97,13 +102,17 @@ ul {
     outline-offset: 4px;
 }
 
-/* 3. CONTENEUR GÉNÉRAL */
+::selection {
+    background: var(--gold-light);
+    color: var(--primary);
+}
+
+/* 3. CONTENEUR */
 .container {
     width: min(1120px, calc(100% - 40px));
     max-width: 100%;
     min-width: 0;
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
 }
 
 main,
@@ -113,15 +122,18 @@ article,
     min-width: 0;
 }
 
-/* 4. EN-TÊTE ET MENU */
+/* =========================================================
+   4. EN-TÊTE ET MENU PRINCIPAL
+   ========================================================= */
+
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.25);
     background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid rgba(201, 164, 92, 0.22);
-    box-shadow: 0 4px 20px rgba(23, 43, 77, 0.055);
+    box-shadow: 0 4px 22px rgba(23, 43, 77, 0.055);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
@@ -131,11 +143,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
-/* Logo */
 .logo {
     display: inline-block;
     flex-shrink: 0;
@@ -143,7 +154,7 @@ header {
     font-size: 1.12rem;
     font-weight: 850;
     letter-spacing: 0.025em;
-    transition: color 0.2s ease;
+    transition: color var(--transition);
 }
 
 .logo span {
@@ -154,13 +165,12 @@ header {
     color: var(--primary-light);
 }
 
-/* Liens du menu */
 .nav-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 6px;
 }
 
 .nav-links > a,
@@ -176,9 +186,9 @@ header {
     font-weight: 650;
     line-height: 1.4;
     transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition);
 }
 
 .nav-links > a:hover,
@@ -187,13 +197,13 @@ header {
     color: #856426;
 }
 
-/* Bouton principal du menu */
+/* Lien d'action */
 .nav-links .nav-cta {
     padding: 10px 18px;
     border: 1px solid var(--primary);
     border-radius: 999px;
     background: var(--primary);
-    color: #ffffff;
+    color: #fff;
     box-shadow: 0 4px 12px rgba(23, 43, 77, 0.12);
 }
 
@@ -204,7 +214,11 @@ header {
     transform: translateY(-1px);
 }
 
-/* Menu déroulant */
+/* =========================================================
+   5. SOUS-MENU DÉROULANT
+   Compatible avec <details class="nav-dropdown">
+   ========================================================= */
+
 .nav-dropdown {
     position: relative;
 }
@@ -212,6 +226,7 @@ header {
 .nav-dropdown summary {
     cursor: pointer;
     list-style: none;
+    user-select: none;
 }
 
 .nav-dropdown summary::-webkit-details-marker {
@@ -220,10 +235,11 @@ header {
 
 .nav-dropdown summary::after {
     content: "⌄";
+    display: inline-block;
     margin-left: 7px;
     color: var(--gold);
     font-size: 1rem;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition);
 }
 
 .nav-dropdown[open] summary::after {
@@ -232,17 +248,19 @@ header {
 
 .nav-submenu {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 12px);
     left: 0;
     z-index: 1100;
     display: none;
-    width: 290px;
-    max-width: min(290px, calc(100vw - 32px));
-    padding: 9px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
-    box-shadow: 0 16px 40px rgba(23, 43, 77, 0.15);
+    width: 300px;
+    max-width: min(300px, calc(100vw - 32px));
+    max-height: min(70vh, 480px);
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid rgba(201, 164, 92, 0.3);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 18px 45px rgba(23, 43, 77, 0.17);
 }
 
 .nav-dropdown[open] .nav-submenu {
@@ -252,24 +270,38 @@ header {
 }
 
 .nav-submenu a {
-    display: block;
-    padding: 11px 13px;
-    border-radius: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 10px 13px;
+    border: 1px solid transparent;
+    border-radius: 10px;
     color: var(--text);
     font-size: 0.88rem;
+    line-height: 1.5;
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        padding-left 0.2s ease;
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        padding-left var(--transition);
 }
 
 .nav-submenu a:hover {
-    padding-left: 17px;
+    padding-left: 18px;
+    border-color: rgba(201, 164, 92, 0.25);
     background: var(--gold-light);
     color: var(--primary);
 }
 
-/* 5. SECTIONS */
+.nav-submenu a:focus-visible {
+    outline-offset: 1px;
+}
+
+/* =========================================================
+   6. SECTIONS ET TITRES
+   ========================================================= */
+
 section {
     width: 100%;
     padding: 76px 0;
@@ -281,7 +313,7 @@ section {
 
 .section-heading {
     max-width: 850px;
-    margin: 0 auto 38px;
+    margin: 0 auto 40px;
     text-align: center;
 }
 
@@ -289,9 +321,9 @@ section {
     display: inline-block;
     margin-bottom: 12px;
     color: #947234;
-    font-size: 0.78rem;
+    font-size: 0.77rem;
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.13em;
     line-height: 1.6;
     text-transform: uppercase;
 }
@@ -300,15 +332,11 @@ section {
     margin-bottom: 18px;
     color: var(--primary);
     font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 800;
     letter-spacing: -0.035em;
+    text-wrap: balance;
 }
 
-.section-heading > p {
-    margin-bottom: 0;
-    color: var(--muted);
-}
-
-/* Petit ornement sous les titres */
 .section-heading h2::after {
     content: "";
     display: block;
@@ -319,7 +347,15 @@ section {
     background: linear-gradient(90deg, var(--gold), #e8d7ae);
 }
 
-/* 6. ACCUEIL */
+.section-heading > p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+/* =========================================================
+   7. ACCUEIL
+   ========================================================= */
+
 .hero {
     display: flex;
     align-items: center;
@@ -328,11 +364,11 @@ section {
     background:
         radial-gradient(
             circle at 85% 15%,
-            rgba(201, 164, 92, 0.18),
+            rgba(201, 164, 92, 0.2),
             transparent 34%
         ),
-        var(--primary);
-    color: #ffffff;
+        linear-gradient(125deg, var(--primary-deep), var(--primary));
+    color: #fff;
 }
 
 .hero-layout {
@@ -370,7 +406,7 @@ section {
 .hero h1 {
     margin-bottom: 22px;
     font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 800;
+    font-weight: 850;
     letter-spacing: -0.055em;
     line-height: 1.08;
 }
@@ -383,7 +419,7 @@ section {
 .hero-content > p {
     max-width: 650px;
     margin-bottom: 28px;
-    color: rgba(255, 255, 255, 0.83);
+    color: rgba(255, 255, 255, 0.84);
     font-size: 1.05rem;
 }
 
@@ -409,9 +445,10 @@ section {
     text-align: center;
     overflow-wrap: anywhere;
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .btn:hover {
@@ -421,16 +458,18 @@ section {
 .btn-primary {
     background: var(--gold);
     color: var(--primary);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
     background: #e0bd79;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
     border-color: rgba(255, 255, 255, 0.4);
     background: transparent;
-    color: #ffffff;
+    color: #fff;
 }
 
 .btn-secondary:hover {
@@ -440,19 +479,23 @@ section {
 .hero-portrait {
     min-width: 0;
     min-height: 300px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.04);
 }
 
-/* 7. INTRODUCTION DE LA VISION */
+/* =========================================================
+   8. INTRODUCTION DE LA VISION
+   ========================================================= */
+
 .vision-intro {
     max-width: 850px;
     margin: 0 auto 32px;
-    padding: 20px 24px;
+    padding: 22px 25px;
+    border: 1px solid rgba(201, 164, 92, 0.25);
     border-left: 4px solid var(--gold);
-    border-radius: 0 12px 12px 0;
-    background: var(--gold-light);
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(120deg, var(--gold-light), #fffdf8);
 }
 
 .vision-intro p {
@@ -460,9 +503,9 @@ section {
     color: var(--primary);
 }
 
-/* =====================================================
-   8. LES SEPT PRINCIPES
-   ===================================================== */
+/* =========================================================
+   9. LES SEPT PRINCIPES
+   ========================================================= */
 
 #ma-vision .principles-grid {
     display: grid;
@@ -500,8 +543,8 @@ section {
     background: var(--surface);
     box-shadow: var(--shadow);
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 #ma-vision .principle-card:hover {
@@ -514,7 +557,6 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
     gap: 15px;
     width: 100%;
     min-width: 0;
@@ -535,7 +577,6 @@ section {
 }
 
 #ma-vision .principle-emoji {
-    position: static;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -544,19 +585,15 @@ section {
     min-width: 48px;
     height: 48px;
     margin: 0;
-    padding: 0;
     border-radius: 13px;
     background: var(--gold-light);
     font-size: 1.45rem;
 }
 
 #ma-vision .principle-number {
-    position: static;
     display: block;
     width: 100%;
-    height: auto;
     margin: 0 0 6px;
-    padding: 0;
     color: #947234;
     font-size: 0.76rem;
     font-weight: 800;
@@ -566,40 +603,28 @@ section {
 }
 
 #ma-vision .principle-card h3 {
-    position: static;
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
-    min-height: 0;
     margin: 0;
-    padding: 0;
     color: var(--primary);
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 750;
     line-height: 1.45;
     white-space: normal;
     overflow-wrap: anywhere;
-    word-break: normal;
-    transform: none;
 }
 
 #ma-vision .principle-card p {
-    position: static;
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
-    min-height: 0;
     margin: 0;
-    padding: 0;
     color: var(--muted);
     font-size: 0.94rem;
     line-height: 1.85;
     white-space: normal;
     overflow-wrap: anywhere;
-    word-break: normal;
-    transform: none;
 }
 
 #ma-vision .principle-card p strong {
@@ -608,16 +633,18 @@ section {
 
 #ma-vision .vision-motto {
     margin-top: 40px;
-    padding: 30px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--primary);
-    color: #ffffff;
+    padding: 32px;
+    border: 1px solid rgba(201, 164, 92, 0.3);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top right, rgba(201, 164, 92, 0.16), transparent 45%),
+        var(--primary);
+    color: #fff;
     text-align: center;
 }
 
 #ma-vision .vision-motto p {
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.83);
 }
 
 #ma-vision .vision-motto p:first-child {
@@ -631,13 +658,13 @@ section {
 
 #ma-vision .vision-motto h3 {
     margin-bottom: 14px;
-    color: #ffffff;
+    color: #fff;
     font-size: clamp(1.3rem, 3vw, 1.9rem);
 }
 
-/* =====================================================
-   9. MES VALEURS — DESIGN MODERNE
-   ===================================================== */
+/* =========================================================
+   10. MES VALEURS
+   ========================================================= */
 
 .values-grid {
     display: grid;
@@ -652,21 +679,20 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-width: 0;
     height: 100%;
+    min-width: 0;
     padding: 28px 25px;
     overflow: hidden;
     border: 1px solid #e9e3d7;
     border-radius: 20px;
-    background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
+    background: linear-gradient(145deg, #fff 0%, #fcfaf5 100%);
     box-shadow: 0 7px 22px rgba(23, 43, 77, 0.055);
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
-/* Fine ligne dorée au sommet */
 .value-card::before {
     content: "";
     position: absolute;
@@ -677,7 +703,6 @@ section {
     background: linear-gradient(90deg, var(--primary), var(--gold));
 }
 
-/* Cercle décoratif */
 .value-card::after {
     content: "";
     position: absolute;
@@ -731,10 +756,12 @@ section {
     color: #947234 !important;
     font-size: 0.79rem !important;
     font-weight: 750;
-    letter-spacing: 0.025em;
 }
 
-/* 10. ICÔNES GÉNÉRALES */
+/* =========================================================
+   11. ICÔNES COMMUNES
+   ========================================================= */
+
 .mission-icon,
 .sphere-icon,
 .highlight-icon,
@@ -746,12 +773,16 @@ section {
     width: 48px;
     height: 48px;
     margin-bottom: 16px;
-    border-radius: 13px;
+    border: 1px solid rgba(201, 164, 92, 0.2);
+    border-radius: 14px;
     background: var(--gold-light);
     font-size: 1.45rem;
 }
 
-/* 11. SPHÈRES HUMAINES */
+/* =========================================================
+   12. SPHÈRES HUMAINES
+   ========================================================= */
+
 .spheres-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -760,12 +791,23 @@ section {
 }
 
 .sphere-card {
+    position: relative;
     min-width: 0;
-    padding: 26px;
+    padding: 28px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: var(--surface);
     box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.sphere-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201, 164, 92, 0.55);
+    box-shadow: var(--shadow-hover);
 }
 
 .sphere-label {
@@ -804,37 +846,55 @@ section {
     padding-left: 3px;
 }
 
-/* 12. LES 12 BESOINS */
+.bullet-list li::marker {
+    color: var(--gold);
+}
+
+/* =========================================================
+   13. LES 12 BESOINS
+   ========================================================= */
+
 .needs-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    gap: 18px;
+    gap: 20px;
 }
 
 .need-card {
+    position: relative;
     min-width: 0;
-    padding: 22px;
+    padding: 24px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 17px;
     background: var(--surface);
+    box-shadow: 0 5px 16px rgba(23, 43, 77, 0.035);
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .need-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    border-color: rgba(201, 164, 92, 0.6);
     box-shadow: var(--shadow);
 }
 
 .need-number {
-    display: block;
-    margin-bottom: 12px;
-    color: #947234;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    min-height: 30px;
+    margin-bottom: 14px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    background: var(--gold-light);
+    color: #856426;
     font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.07em;
 }
 
 .need-card h4 {
@@ -850,16 +910,20 @@ section {
 }
 
 .needs-note {
-    margin-top: 24px;
-    padding: 22px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    margin-top: 26px;
+    padding: 24px;
+    border: 1px solid rgba(201, 164, 92, 0.3);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 14px 14px 0;
     background: var(--gold-light);
     color: var(--primary);
     font-size: 0.94rem;
 }
 
-/* 13. APPLICATIONS */
+/* =========================================================
+   14. APPLICATIONS
+   ========================================================= */
+
 .applications-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -868,33 +932,64 @@ section {
 }
 
 .application-card {
+    position: relative;
     min-width: 0;
-    padding: 26px;
+    padding: 28px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: var(--surface);
     box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
-/* 14. SYNTHÈSE */
+.application-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201, 164, 92, 0.55);
+    box-shadow: var(--shadow-hover);
+}
+
+.application-card h3 {
+    line-height: 1.4;
+}
+
+.application-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   15. SYNTHÈSE
+   ========================================================= */
+
 .synthesis-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 .synthesis-card {
+    position: relative;
     min-width: 0;
-    padding: 24px;
+    padding: 26px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 17px;
     background: var(--surface);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.synthesis-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
 
 .synthesis-card h3 {
     margin-bottom: 10px;
     color: var(--primary);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
 }
 
 .synthesis-card p {
@@ -906,36 +1001,51 @@ section {
 .vision-quote {
     margin-top: 30px;
     padding: 30px;
+    border: 1px solid rgba(201, 164, 92, 0.25);
     border-left: 4px solid var(--gold);
-    border-radius: 0 14px 14px 0;
-    background: var(--gold-light);
+    border-radius: 0 16px 16px 0;
+    background: linear-gradient(120deg, var(--gold-light), #fffdf8);
 }
 
 .vision-quote p {
     margin: 0;
     color: var(--primary);
     font-size: 1.03rem;
-    font-weight: 500;
+    font-weight: 550;
 }
 
-/* 15. MISSIONS */
+/* =========================================================
+   16. MISSIONS
+   ========================================================= */
+
 .missions-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    gap: 22px;
+    gap: 24px;
 }
 
 .mission-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     min-width: 0;
-    padding: 25px;
+    padding: 27px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: var(--surface);
     box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 164, 92, 0.6);
+    box-shadow: var(--shadow-hover);
 }
 
 .mission-card h3 {
@@ -949,37 +1059,53 @@ section {
     font-size: 0.92rem;
 }
 
+.mission-card p:last-of-type {
+    margin-bottom: 12px;
+}
+
 .mission-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: auto;
+    padding-top: 12px;
 }
 
 .mission-links a,
 .mission-link {
     display: block;
     max-width: 100%;
-    padding: 11px 13px;
-    border-radius: 9px;
-    background: var(--gold-light);
+    padding: 11px 14px;
+    border: 1px solid rgba(201, 164, 92, 0.2);
+    border-radius: 10px;
+    background: var(--gold-pale);
     color: var(--primary);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 650;
     overflow-wrap: anywhere;
-    transition: background 0.2s ease;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        padding-left var(--transition);
 }
 
 .mission-links a:hover,
 .mission-link:hover {
-    background: #eadbbd;
+    padding-left: 18px;
+    border-color: rgba(201, 164, 92, 0.5);
+    background: var(--gold-light);
 }
 
-/* 16. POINTS FORTS */
+/* =========================================================
+   17. POINTS FORTS
+   ========================================================= */
+
 .highlights {
-    padding: 30px 0;
-    background: var(--gold-light);
+    padding: 34px 0;
+    border-top: 1px solid rgba(201, 164, 92, 0.15);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.15);
+    background: linear-gradient(110deg, #f5efe2, #fcf8ef);
 }
 
 .highlight-grid {
@@ -1001,35 +1127,54 @@ section {
 .highlight-icon {
     flex-shrink: 0;
     margin: 0;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(23, 43, 77, 0.06);
 }
 
-/* 17. CARTES DE CONTENU */
+/* =========================================================
+   18. CARTES DE CONTENU
+   ========================================================= */
+
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    gap: 22px;
+    gap: 24px;
 }
 
 .feature-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     min-width: 0;
-    padding: 25px;
+    padding: 27px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: var(--surface);
     box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 164, 92, 0.6);
+    box-shadow: var(--shadow-hover);
 }
 
 .episode {
     display: inline-block;
     margin-bottom: 14px;
-    color: #947234;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background: var(--gold-light);
+    color: #856426;
     font-size: 0.73rem;
     font-weight: 800;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.08em;
 }
 
 .feature-card h3 {
@@ -1052,24 +1197,37 @@ section {
     color: var(--primary);
     font-size: 0.9rem;
     font-weight: 800;
+    transition: color var(--transition), gap var(--transition);
 }
 
 .card-link:hover {
+    gap: 12px;
     color: #947234;
 }
 
-/* 18. APPEL À L'ACTION */
+/* =========================================================
+   19. APPEL À L'ACTION
+   ========================================================= */
+
 .cta {
-    padding: 65px 0;
-    background: var(--gold-light);
+    padding: 68px 0;
+    background:
+        radial-gradient(circle at 5% 95%, rgba(201, 164, 92, 0.12), transparent 32%),
+        var(--gold-light);
 }
 
 .cta-box {
-    padding: 42px;
-    border-radius: 22px;
-    background: var(--primary);
-    color: #ffffff;
+    position: relative;
+    padding: 46px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 92, 0.28);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(201, 164, 92, 0.18), transparent 35%),
+        var(--primary);
+    color: #fff;
     text-align: center;
+    box-shadow: 0 15px 38px rgba(23, 43, 77, 0.12);
 }
 
 .cta-box h2 {
@@ -1080,22 +1238,29 @@ section {
 .cta-box p {
     max-width: 700px;
     margin: 0 auto 24px;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.83);
 }
 
-/* 19. PIED DE PAGE */
+/* =========================================================
+   20. PIED DE PAGE
+   ========================================================= */
+
 footer {
-    padding: 40px 0 20px;
-    background: #101f38;
-    color: #ffffff;
+    padding: 46px 0 22px;
+    background: linear-gradient(145deg, #142541, #101f38);
+    color: #fff;
 }
 
 .footer-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 32px;
-    padding-bottom: 30px;
+    gap: 36px;
+    padding-bottom: 32px;
+}
+
+.footer-top .logo {
+    color: #fff;
 }
 
 .footer-description {
@@ -1108,12 +1273,13 @@ footer {
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px 18px;
 }
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.9rem;
+    transition: color var(--transition);
 }
 
 .footer-links a:hover {
@@ -1121,22 +1287,22 @@ footer {
 }
 
 .copyright {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.65);
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.62);
     font-size: 0.82rem;
     text-align: center;
 }
 
-/* =====================================================
-   20. TABLETTES
-   ===================================================== */
+/* =========================================================
+   21. TABLETTES ET PETITS ORDINATEURS
+   ========================================================= */
 
 @media screen and (max-width: 1000px) {
     .navbar {
         align-items: flex-start;
         flex-direction: column;
-        gap: 14px;
+        gap: 13px;
     }
 
     .nav-links {
@@ -1158,11 +1324,15 @@ footer {
     .needs-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .nav-submenu {
+        max-width: min(300px, calc(100vw - 40px));
+    }
 }
 
-/* =====================================================
-   21. MOBILES
-   ===================================================== */
+/* =========================================================
+   22. TÉLÉPHONES
+   ========================================================= */
 
 @media screen and (max-width: 760px) {
     html,
@@ -1174,14 +1344,13 @@ footer {
 
     .container {
         width: calc(100% - 32px);
-        max-width: 100%;
     }
 
     section {
         padding: 48px 0;
     }
 
-    /* Navigation mobile */
+    /* Navigation */
     header {
         position: relative;
     }
@@ -1199,7 +1368,6 @@ footer {
     }
 
     .nav-links {
-        display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -1222,7 +1390,18 @@ footer {
         position: absolute;
         top: calc(100% + 8px);
         left: 0;
+        width: min(300px, calc(100vw - 32px));
         max-width: calc(100vw - 32px);
+        max-height: 60vh;
+        overflow-y: auto;
+        border-radius: 14px;
+        box-shadow: 0 16px 36px rgba(23, 43, 77, 0.2);
+    }
+
+    .nav-submenu a {
+        min-height: 42px;
+        padding: 11px 12px;
+        font-size: 0.88rem;
     }
 
     /* Titres */
@@ -1242,7 +1421,7 @@ footer {
     /* Accueil */
     .hero {
         min-height: auto;
-        padding: 60px 0;
+        padding: 58px 0;
     }
 
     .hero-layout {
@@ -1272,7 +1451,7 @@ footer {
         width: 100%;
     }
 
-    /* Sept principes : une seule colonne */
+    /* Sept principes : une colonne sans chevauchement */
     #ma-vision .principles-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -1396,10 +1575,20 @@ footer {
         text-align: left;
     }
 
-    /* Mes valeurs : une carte par ligne */
-    .values-grid {
+    /* Toutes les grilles en une colonne */
+    .values-grid,
+    .spheres-grid,
+    .needs-grid,
+    .applications-grid,
+    .synthesis-grid,
+    .missions-grid,
+    .cards-grid,
+    .highlight-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 17px;
+        gap: 18px;
+    }
+
+    .values-grid {
         margin-top: 24px;
     }
 
@@ -1417,19 +1606,6 @@ footer {
         font-size: 0.92rem;
     }
 
-    /* Autres grilles */
-    .spheres-grid,
-    .needs-grid,
-    .applications-grid,
-    .synthesis-grid,
-    .missions-grid,
-    .cards-grid,
-    .highlight-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 18px;
-    }
-
-    .value-card,
     .sphere-card,
     .need-card,
     .application-card,
@@ -1438,7 +1614,7 @@ footer {
     .feature-card {
         width: 100%;
         min-width: 0;
-        padding: 21px;
+        padding: 22px;
     }
 
     .highlight-grid {
@@ -1461,6 +1637,7 @@ footer {
         padding: 22px 18px;
     }
 
+    /* Appel à l'action */
     .cta {
         padding: 45px 0;
     }
@@ -1468,25 +1645,27 @@ footer {
     .cta-box {
         padding: 28px 20px;
         text-align: left;
+        border-radius: 18px;
     }
 
     .cta-box .btn {
         width: 100%;
     }
 
+    /* Pied de page */
     .footer-top {
         flex-direction: column;
         gap: 24px;
     }
 
     .footer-links {
-        gap: 14px;
+        gap: 12px 16px;
     }
 }
 
-/* =====================================================
-   22. PETITS TÉLÉPHONES
-   ===================================================== */
+/* =========================================================
+   23. PETITS TÉLÉPHONES
+   ========================================================= */
 
 @media screen and (max-width: 380px) {
     .container {
@@ -1552,9 +1731,9 @@ footer {
     }
 }
 
-/* =====================================================
-   23. ACCESSIBILITÉ ET ANIMATIONS
-   ===================================================== */
+/* =========================================================
+   24. ACCESSIBILITÉ
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
     *,
