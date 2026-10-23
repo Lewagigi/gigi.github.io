@@ -5,288 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Ma vision des sphères humaines : identité, émotions, besoins, famille, leadership et spiritualité."
+  >
+
   <title>Ma vision des sphères humaines</title>
 
-  <style>
-    :root {
-      --primary: #174A7E;
-      --secondary: #65B5E8;
-      --background: #F2F7FC;
-      --surface: #FFFFFF;
-      --text: #263746;
-      --muted: #607487;
-      --dark-blue: #12345A;
-      --light-blue: #EAF4FC;
-      --border: #D7E7F5;
-    }
+  <!-- Police utilisée sur le site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    * {
-      box-sizing: border-box;
-    }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 25px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--background);
-    }
-
-    a {
-      color: var(--primary);
-    }
-
-    /* Bouton de retour vers l'accueil */
-
-    .back-home {
-      display: inline-block;
-      margin: 18px 25px;
-      padding: 10px 18px;
-      color: var(--primary);
-      background: var(--light-blue);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .back-home:hover {
-      color: white;
-      background: var(--primary);
-    }
-
-    .back-home:focus-visible {
-      outline: 3px solid var(--secondary);
-      outline-offset: 3px;
-    }
-
-    /* En-tête */
-
-    header {
-      padding: 65px 20px;
-      text-align: center;
-      color: white;
-      background: linear-gradient(
-        135deg,
-        var(--dark-blue),
-        var(--primary),
-        var(--secondary)
-      );
-    }
-
-    header h1 {
-      margin: 0 0 15px;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.2;
-    }
-
-    header p {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    /* Navigation */
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 18px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav a {
-      padding: 8px 13px;
-      border-radius: 20px;
-      background: var(--light-blue);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: white;
-      background: var(--primary);
-    }
-
-    /* Contenu principal */
-
-    main {
-      width: min(1100px, 92%);
-      margin: 35px auto 60px;
-    }
-
-    section {
-      margin-bottom: 28px;
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 5px 18px rgba(23, 74, 126, 0.06);
-    }
-
-    section h2 {
-      margin-top: 0;
-      padding-bottom: 10px;
-      color: var(--primary);
-      border-bottom: 2px solid var(--border);
-    }
-
-    section h3 {
-      color: var(--dark-blue);
-    }
-
-    .intro {
-      font-size: 1.08rem;
-    }
-
-    .highlight {
-      margin: 20px 0;
-      padding: 18px;
-      background: var(--light-blue);
-      border-left: 5px solid var(--secondary);
-      border-radius: 8px;
-    }
-
-    /* Cartes */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .card {
-      padding: 20px;
-      background: #F8FBFE;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-    }
-
-    .number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      margin-bottom: 8px;
-      color: white;
-      background: var(--primary);
-      border-radius: 50%;
-      font-weight: bold;
-    }
-
-    /* Liste des besoins */
-
-    .needs-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .needs-list li {
-      padding: 13px 15px;
-      background: var(--light-blue);
-      border-radius: 8px;
-    }
-
-    .needs-list li::before {
-      content: "✓ ";
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    /* Références bibliques */
-
-    .verse {
-      margin: 15px 0;
-      padding: 15px 18px;
-      background: #F8FBFE;
-      border-left: 4px solid var(--secondary);
-      border-radius: 6px;
-    }
-
-    .reference {
-      display: block;
-      margin-top: 5px;
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    /* Pied de page */
-
-    footer {
-      padding: 30px 20px;
-      text-align: center;
-      color: white;
-      background: var(--dark-blue);
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    .footer-link {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 9px 16px;
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    .footer-link:hover {
-      color: var(--dark-blue);
-      background: white;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 45px 18px;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      .back-home {
-        margin: 14px;
-      }
-    }
-  </style>
+  <!-- Feuille de style commune au site -->
+  <link rel="stylesheet" href="add.css">
 </head>
 
 <body>
 
-  <!-- Bouton pour revenir au fichier index.html -->
+  <!-- ======================================
+       RETOUR À L'ACCUEIL
+  ======================================= -->
+
   <a href="index.html" class="back-home">
     ← Retour à l’accueil
   </a>
 
+
+  <!-- ======================================
+       EN-TÊTE
+  ======================================= -->
+
   <header>
     <h1>Ma vision des sphères humaines</h1>
+
     <p>
       Comprendre l’être humain dans toutes ses dimensions pour favoriser
       l’équilibre personnel, relationnel, familial, professionnel et spirituel.
     </p>
   </header>
+
+
+  <!-- ======================================
+       NAVIGATION DANS LA PAGE
+  ======================================= -->
 
   <nav aria-label="Navigation dans la page">
     <a href="#vision">Ma vision</a>
@@ -296,11 +62,17 @@
     <a href="#famille">Famille</a>
     <a href="#leadership">Leadership</a>
     <a href="#spiritualite">Spiritualité</a>
+    <a href="#conclusion">Conclusion</a>
   </nav>
+
+
+  <!-- ======================================
+       CONTENU PRINCIPAL
+  ======================================= -->
 
   <main>
 
-    <!-- Ma vision globale -->
+    <!-- 1. MA VISION GLOBALE -->
 
     <section id="vision">
       <h2>1. Ma vision globale de l’être humain</h2>
@@ -320,45 +92,61 @@
       </p>
 
       <div class="highlight">
-        <strong>Ma conviction :</strong> accompagner une personne, c’est
-        prendre en compte sa globalité, reconnaître sa valeur et l’aider
-        à développer son potentiel dans un cadre respectueux et bienveillant.
+        <strong>Ma conviction :</strong>
+        accompagner une personne, c’est prendre en compte sa globalité,
+        reconnaître sa valeur et l’aider à développer son potentiel dans
+        un cadre respectueux et bienveillant.
       </div>
 
       <div class="cards">
+
         <article class="card">
           <h3>Identité</h3>
-          <p>Qui suis-je ? Quelle est ma valeur ? Quelles sont mes forces ?</p>
+          <p>
+            Qui suis-je ? Quelle est ma valeur ? Quelles sont mes forces ?
+          </p>
         </article>
 
         <article class="card">
           <h3>Émotions</h3>
-          <p>Que ressens-je ? Comment comprendre et exprimer mes émotions ?</p>
+          <p>
+            Que ressens-je ? Comment comprendre et exprimer mes émotions ?
+          </p>
         </article>
 
         <article class="card">
           <h3>Besoins</h3>
-          <p>De quoi ai-je besoin pour me sentir en sécurité et avancer ?</p>
+          <p>
+            De quoi ai-je besoin pour me sentir en sécurité et avancer ?
+          </p>
         </article>
 
         <article class="card">
           <h3>Relations</h3>
-          <p>Comment construire des relations saines avec les autres ?</p>
+          <p>
+            Comment construire des relations saines avec les autres ?
+          </p>
         </article>
 
         <article class="card">
           <h3>Action</h3>
-          <p>Comment mettre mes valeurs et mes capacités au service de mes projets ?</p>
+          <p>
+            Comment mettre mes valeurs et mes capacités au service de mes projets ?
+          </p>
         </article>
 
         <article class="card">
           <h3>Spiritualité</h3>
-          <p>Quel sens donner à ma vie et quelle place accorder à ma foi ?</p>
+          <p>
+            Quel sens donner à ma vie et quelle place accorder à ma foi ?
+          </p>
         </article>
+
       </div>
     </section>
 
-    <!-- Identité et estime de soi -->
+
+    <!-- 2. IDENTITÉ ET ESTIME DE SOI -->
 
     <section id="identite">
       <h2>2. L’identité et l’estime de soi</h2>
@@ -373,11 +161,30 @@
       <h3>Les éléments essentiels</h3>
 
       <ul>
-        <li><strong>La connaissance de soi :</strong> reconnaître ses forces, ses limites et ses aspirations.</li>
-        <li><strong>L’estime de soi :</strong> reconnaître sa valeur sans se comparer constamment aux autres.</li>
-        <li><strong>La confiance en soi :</strong> croire en sa capacité à apprendre, agir et progresser.</li>
-        <li><strong>L’authenticité :</strong> vivre en cohérence avec ses valeurs et ses convictions.</li>
-        <li><strong>La responsabilité :</strong> reconnaître sa capacité à faire des choix et à apprendre de ses erreurs.</li>
+        <li>
+          <strong>La connaissance de soi :</strong>
+          reconnaître ses forces, ses limites et ses aspirations.
+        </li>
+
+        <li>
+          <strong>L’estime de soi :</strong>
+          reconnaître sa valeur sans se comparer constamment aux autres.
+        </li>
+
+        <li>
+          <strong>La confiance en soi :</strong>
+          croire en sa capacité à apprendre, agir et progresser.
+        </li>
+
+        <li>
+          <strong>L’authenticité :</strong>
+          vivre en cohérence avec ses valeurs et ses convictions.
+        </li>
+
+        <li>
+          <strong>La responsabilité :</strong>
+          reconnaître sa capacité à faire des choix et à apprendre de ses erreurs.
+        </li>
       </ul>
 
       <div class="highlight">
@@ -396,7 +203,8 @@
       </ul>
     </section>
 
-    <!-- Sphère émotionnelle et affective -->
+
+    <!-- 3. SPHÈRE ÉMOTIONNELLE ET AFFECTIVE -->
 
     <section id="emotionnelle">
       <h2>3. La sphère émotionnelle et affective</h2>
@@ -408,25 +216,35 @@
       </p>
 
       <div class="cards">
+
         <article class="card">
           <h3>Reconnaître</h3>
-          <p>Identifier ce que l’on ressent sans se juger immédiatement.</p>
+          <p>
+            Identifier ce que l’on ressent sans se juger immédiatement.
+          </p>
         </article>
 
         <article class="card">
           <h3>Comprendre</h3>
-          <p>Explorer ce qui a déclenché l’émotion et le besoin éventuellement associé.</p>
+          <p>
+            Explorer ce qui a déclenché l’émotion et le besoin éventuellement associé.
+          </p>
         </article>
 
         <article class="card">
           <h3>Exprimer</h3>
-          <p>Mettre des mots sur ses ressentis de façon claire et respectueuse.</p>
+          <p>
+            Mettre des mots sur ses ressentis de façon claire et respectueuse.
+          </p>
         </article>
 
         <article class="card">
           <h3>Réguler</h3>
-          <p>Choisir une réponse adaptée plutôt que réagir automatiquement.</p>
+          <p>
+            Choisir une réponse adaptée plutôt que réagir automatiquement.
+          </p>
         </article>
+
       </div>
 
       <h3>La dimension affective</h3>
@@ -444,7 +262,8 @@
       </div>
     </section>
 
-    <!-- Les 12 besoins fondamentaux -->
+
+    <!-- 4. LES DOUZE BESOINS FONDAMENTAUX -->
 
     <section id="besoins">
       <h2>4. Les 12 besoins fondamentaux</h2>
@@ -457,18 +276,67 @@
       </p>
 
       <ul class="needs-list">
-        <li><strong>Sécurité :</strong> se sentir protégé et rassuré.</li>
-        <li><strong>Appartenance :</strong> se sentir accepté dans un groupe.</li>
-        <li><strong>Amour et affection :</strong> donner et recevoir de l’affection.</li>
-        <li><strong>Reconnaissance :</strong> voir sa contribution et ses efforts considérés.</li>
-        <li><strong>Autonomie :</strong> pouvoir faire des choix personnels.</li>
-        <li><strong>Compétence :</strong> apprendre et développer ses capacités.</li>
-        <li><strong>Sens :</strong> comprendre la signification de ses actions.</li>
-        <li><strong>Expression :</strong> pouvoir communiquer ses idées et ses émotions.</li>
-        <li><strong>Repos :</strong> récupérer physiquement et mentalement.</li>
-        <li><strong>Équilibre :</strong> préserver une juste place entre les dimensions de sa vie.</li>
-        <li><strong>Contribution :</strong> se sentir utile et participer à quelque chose de plus grand que soi.</li>
-        <li><strong>Croissance :</strong> évoluer, découvrir et développer son potentiel.</li>
+
+        <li>
+          <strong>Sécurité :</strong>
+          se sentir protégé et rassuré.
+        </li>
+
+        <li>
+          <strong>Appartenance :</strong>
+          se sentir accepté dans un groupe.
+        </li>
+
+        <li>
+          <strong>Amour et affection :</strong>
+          donner et recevoir de l’affection.
+        </li>
+
+        <li>
+          <strong>Reconnaissance :</strong>
+          voir sa contribution et ses efforts considérés.
+        </li>
+
+        <li>
+          <strong>Autonomie :</strong>
+          pouvoir faire des choix personnels.
+        </li>
+
+        <li>
+          <strong>Compétence :</strong>
+          apprendre et développer ses capacités.
+        </li>
+
+        <li>
+          <strong>Sens :</strong>
+          comprendre la signification de ses actions.
+        </li>
+
+        <li>
+          <strong>Expression :</strong>
+          pouvoir communiquer ses idées et ses émotions.
+        </li>
+
+        <li>
+          <strong>Repos :</strong>
+          récupérer physiquement et mentalement.
+        </li>
+
+        <li>
+          <strong>Équilibre :</strong>
+          préserver une juste place entre les dimensions de sa vie.
+        </li>
+
+        <li>
+          <strong>Contribution :</strong>
+          se sentir utile et participer à quelque chose de plus grand que soi.
+        </li>
+
+        <li>
+          <strong>Croissance :</strong>
+          évoluer, découvrir et développer son potentiel.
+        </li>
+
       </ul>
 
       <h3>Comment utiliser cette grille ?</h3>
@@ -482,7 +350,8 @@
       </p>
     </section>
 
-    <!-- Sphère familiale -->
+
+    <!-- 5. SPHÈRE FAMILIALE -->
 
     <section id="famille">
       <h2>5. La sphère familiale</h2>
@@ -494,25 +363,35 @@
       </p>
 
       <div class="cards">
+
         <article class="card">
           <h3>Communication</h3>
-          <p>Écouter, exprimer ses attentes et dialoguer sans humilier.</p>
+          <p>
+            Écouter, exprimer ses attentes et dialoguer sans humilier.
+          </p>
         </article>
 
         <article class="card">
           <h3>Respect</h3>
-          <p>Reconnaître la dignité de chaque membre et ses différences.</p>
+          <p>
+            Reconnaître la dignité de chaque membre et ses différences.
+          </p>
         </article>
 
         <article class="card">
           <h3>Limites saines</h3>
-          <p>Définir des règles claires tout en respectant les besoins individuels.</p>
+          <p>
+            Définir des règles claires tout en respectant les besoins individuels.
+          </p>
         </article>
 
         <article class="card">
           <h3>Soutien mutuel</h3>
-          <p>Encourager chacun dans les périodes difficiles et les étapes de croissance.</p>
+          <p>
+            Encourager chacun dans les périodes difficiles et les étapes de croissance.
+          </p>
         </article>
+
       </div>
 
       <h3>Quelques questions importantes</h3>
@@ -525,7 +404,8 @@
       </ul>
     </section>
 
-    <!-- Leadership professionnel -->
+
+    <!-- 6. LEADERSHIP PROFESSIONNEL -->
 
     <section id="leadership">
       <h2>6. La sphère professionnelle et le leadership</h2>
@@ -539,35 +419,49 @@
       </p>
 
       <div class="cards">
+
         <article class="card">
           <h3>Vision</h3>
-          <p>Donner une direction compréhensible et expliquer le sens des objectifs.</p>
+          <p>
+            Donner une direction compréhensible et expliquer le sens des objectifs.
+          </p>
         </article>
 
         <article class="card">
           <h3>Exemplarité</h3>
-          <p>Agir avec cohérence entre ses paroles, ses décisions et ses valeurs.</p>
+          <p>
+            Agir avec cohérence entre ses paroles, ses décisions et ses valeurs.
+          </p>
         </article>
 
         <article class="card">
           <h3>Écoute</h3>
-          <p>Considérer les idées, les préoccupations et les compétences de l’équipe.</p>
+          <p>
+            Considérer les idées, les préoccupations et les compétences de l’équipe.
+          </p>
         </article>
 
         <article class="card">
           <h3>Responsabilisation</h3>
-          <p>Favoriser l’autonomie, la coopération et l’apprentissage.</p>
+          <p>
+            Favoriser l’autonomie, la coopération et l’apprentissage.
+          </p>
         </article>
 
         <article class="card">
           <h3>Gestion des conflits</h3>
-          <p>Traiter les désaccords avec équité, calme et clarté.</p>
+          <p>
+            Traiter les désaccords avec équité, calme et clarté.
+          </p>
         </article>
 
         <article class="card">
           <h3>Développement</h3>
-          <p>Encourager la progression et reconnaître les contributions de chacun.</p>
+          <p>
+            Encourager la progression et reconnaître les contributions de chacun.
+          </p>
         </article>
+
       </div>
 
       <div class="highlight">
@@ -576,7 +470,8 @@
       </div>
     </section>
 
-    <!-- Spiritualité et Bible -->
+
+    <!-- 7. SPIRITUALITÉ ET BIBLE -->
 
     <section id="spiritualite">
       <h2>7. La sphère spirituelle et les références bibliques</h2>
@@ -590,7 +485,10 @@
 
       <div class="verse">
         « Tu aimeras ton prochain comme toi-même. »
-        <span class="reference">Lévitique 19:18 — voir aussi Matthieu 22:39</span>
+
+        <span class="reference">
+          Lévitique 19:18 — voir aussi Matthieu 22:39
+        </span>
       </div>
 
       <p>
@@ -602,7 +500,10 @@
       <div class="verse">
         « Garde ton cœur plus que toute autre chose, car de lui viennent
         les sources de la vie. »
-        <span class="reference">Proverbes 4:23</span>
+
+        <span class="reference">
+          Proverbes 4:23
+        </span>
       </div>
 
       <p>
@@ -613,7 +514,10 @@
       <div class="verse">
         « Que chacun de vous, au lieu de considérer ses propres intérêts,
         considère aussi ceux des autres. »
-        <span class="reference">Philippiens 2:4</span>
+
+        <span class="reference">
+          Philippiens 2:4
+        </span>
       </div>
 
       <p>
@@ -623,7 +527,10 @@
 
       <div class="verse">
         « Si quelqu’un d’entre vous manque de sagesse, qu’il la demande à Dieu. »
-        <span class="reference">Jacques 1:5 — extrait</span>
+
+        <span class="reference">
+          Jacques 1:5 — extrait
+        </span>
       </div>
 
       <p>
@@ -643,7 +550,8 @@
       </ul>
     </section>
 
-    <!-- Conclusion -->
+
+    <!-- 8. CONCLUSION -->
 
     <section id="conclusion">
       <h2>8. Conclusion : rechercher l’équilibre</h2>
@@ -663,9 +571,10 @@
       </p>
 
       <div class="highlight">
-        <strong>Ma démarche :</strong> apprendre à mieux me connaître,
-        cultiver des relations saines, développer mes compétences,
-        prendre soin de mon équilibre et vivre en cohérence avec mes valeurs.
+        <strong>Ma démarche :</strong>
+        apprendre à mieux me connaître, cultiver des relations saines,
+        développer mes compétences, prendre soin de mon équilibre et vivre
+        en cohérence avec mes valeurs.
       </div>
 
       <h3>Questions pour poursuivre ma réflexion</h3>
@@ -680,14 +589,38 @@
 
   </main>
 
+
+  <!-- ======================================
+       PIED DE PAGE
+  ======================================= -->
+
   <footer>
-    <p><strong>Ma vision des sphères humaines</strong></p>
-    <p>Se connaître, grandir, aimer et contribuer.</p>
+    <p>
+      <strong>Ma vision des sphères humaines</strong>
+    </p>
+
+    <p>
+      Se connaître, grandir, aimer et contribuer.
+    </p>
 
     <a class="footer-link" href="index.html">
       ← Retour à l’accueil
     </a>
+
+    <p class="copyright">
+      © <span id="current-year">2026</span> — Tous droits réservés.
+    </p>
   </footer>
+
+
+  <!-- ======================================
+       SCRIPTS
+  ======================================= -->
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
