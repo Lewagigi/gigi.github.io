@@ -1684,3 +1684,63 @@ footer {
         transition-duration: .01ms !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur du portrait */
+.hero-portrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Image de Régis */
+.hero-portrait img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Adaptation aux téléphones */
+@media screen and (max-width: 768px) {
+    .hero-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content,
+    .hero-portrait {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-portrait {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+    }
+
+    .hero-portrait img {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
+
+
