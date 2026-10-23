@@ -1,7 +1,7 @@
 
 /* =====================================================
    LEWALIBARI RÉGIS — FEUILLE DE STYLE COMPLÈTE
-   Compatible avec le HTML fourni
+   Menu élégant • Mes valeurs • Responsive • 7 principes
    ===================================================== */
 
 /* 1. VARIABLES */
@@ -16,6 +16,7 @@
     --muted: #667085;
     --border: #e8e3d9;
     --shadow: 0 8px 24px rgba(23, 43, 77, 0.08);
+    --shadow-hover: 0 16px 35px rgba(23, 43, 77, 0.13);
     --radius: 16px;
 }
 
@@ -91,6 +92,11 @@ ul {
     padding-left: 22px;
 }
 
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
 /* 3. CONTENEUR GÉNÉRAL */
 .container {
     width: min(1120px, calc(100% - 40px));
@@ -107,15 +113,17 @@ article,
     min-width: 0;
 }
 
-/* 4. EN-TÊTE ET NAVIGATION */
+/* 4. EN-TÊTE ET MENU */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
     background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 2px 12px rgba(23, 43, 77, 0.04);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.22);
+    box-shadow: 0 4px 20px rgba(23, 43, 77, 0.055);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 .navbar {
@@ -123,59 +131,80 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 17px;
+    padding-bottom: 17px;
 }
 
+/* Logo */
 .logo {
     display: inline-block;
     flex-shrink: 0;
     color: var(--primary);
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
+    font-size: 1.12rem;
+    font-weight: 850;
+    letter-spacing: 0.025em;
+    transition: color 0.2s ease;
 }
 
 .logo span {
     color: var(--gold);
 }
 
+.logo:hover {
+    color: var(--primary-light);
+}
+
+/* Liens du menu */
 .nav-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 8px 18px;
+    gap: 7px;
 }
 
 .nav-links > a,
 .nav-dropdown > summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 9px 12px;
+    border-radius: 999px;
     color: var(--primary);
-    font-size: 0.88rem;
-    font-weight: 600;
-}
-
-.nav-links > a {
-    transition: color 0.2s ease;
+    font-size: 0.86rem;
+    font-weight: 650;
+    line-height: 1.4;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .nav-links > a:hover,
 .nav-dropdown > summary:hover {
-    color: var(--gold);
+    background: var(--gold-light);
+    color: #856426;
 }
 
+/* Bouton principal du menu */
 .nav-links .nav-cta {
-    padding: 9px 16px;
+    padding: 10px 18px;
+    border: 1px solid var(--primary);
     border-radius: 999px;
     background: var(--primary);
     color: #ffffff;
+    box-shadow: 0 4px 12px rgba(23, 43, 77, 0.12);
 }
 
 .nav-links .nav-cta:hover {
+    border-color: var(--gold);
     background: var(--gold);
     color: var(--primary);
+    transform: translateY(-1px);
 }
 
+/* Menu déroulant */
 .nav-dropdown {
     position: relative;
 }
@@ -190,22 +219,30 @@ header {
 }
 
 .nav-dropdown summary::after {
-    content: " ▾";
+    content: "⌄";
+    margin-left: 7px;
+    color: var(--gold);
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown[open] summary::after {
+    transform: rotate(180deg);
 }
 
 .nav-submenu {
     position: absolute;
-    top: calc(100% + 12px);
+    top: calc(100% + 10px);
     left: 0;
     z-index: 1100;
     display: none;
     width: 290px;
     max-width: min(290px, calc(100vw - 32px));
-    padding: 10px;
+    padding: 9px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--surface);
-    box-shadow: var(--shadow);
+    box-shadow: 0 16px 40px rgba(23, 43, 77, 0.15);
 }
 
 .nav-dropdown[open] .nav-submenu {
@@ -216,13 +253,18 @@ header {
 
 .nav-submenu a {
     display: block;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 11px 13px;
+    border-radius: 9px;
     color: var(--text);
     font-size: 0.88rem;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
 }
 
 .nav-submenu a:hover {
+    padding-left: 17px;
     background: var(--gold-light);
     color: var(--primary);
 }
@@ -264,6 +306,17 @@ section {
 .section-heading > p {
     margin-bottom: 0;
     color: var(--muted);
+}
+
+/* Petit ornement sous les titres */
+.section-heading h2::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 3px;
+    margin: 17px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--gold), #e8d7ae);
 }
 
 /* 6. ACCUEIL */
@@ -408,10 +461,9 @@ section {
 }
 
 /* =====================================================
-   8. LES SEPT PRINCIPES — CORRECTION PRINCIPALE
+   8. LES SEPT PRINCIPES
    ===================================================== */
 
-/* Ordinateur : deux colonnes */
 #ma-vision .principles-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -424,35 +476,29 @@ section {
     padding: 0;
 }
 
-/* Cartes */
 #ma-vision .principle-card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
-
     width: 100%;
     min-width: 0;
     max-width: 100%;
     height: auto;
     min-height: 0;
-
     margin: 0;
     padding: 26px;
-
     float: none;
     clear: both;
     transform: none;
     box-sizing: border-box;
     overflow: visible;
     overflow-wrap: anywhere;
-
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
     box-shadow: var(--shadow);
-
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
@@ -460,10 +506,9 @@ section {
 
 #ma-vision .principle-card:hover {
     border-color: rgba(201, 164, 92, 0.75);
-    box-shadow: 0 12px 30px rgba(23, 43, 77, 0.11);
+    box-shadow: var(--shadow-hover);
 }
 
-/* Ligne de titre et emoji */
 #ma-vision .principle-top {
     position: static;
     display: flex;
@@ -471,7 +516,6 @@ section {
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
-
     width: 100%;
     min-width: 0;
     height: auto;
@@ -479,7 +523,6 @@ section {
     padding: 0;
 }
 
-/* Bloc numéro + titre */
 #ma-vision .principle-top > div:last-child {
     position: static;
     flex: 1 1 auto;
@@ -491,18 +534,15 @@ section {
     padding: 0;
 }
 
-/* Emoji */
 #ma-vision .principle-emoji {
     position: static;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex: 0 0 48px;
     width: 48px;
     min-width: 48px;
     height: 48px;
-
     margin: 0;
     padding: 0;
     border-radius: 13px;
@@ -510,7 +550,6 @@ section {
     font-size: 1.45rem;
 }
 
-/* Numéro */
 #ma-vision .principle-number {
     position: static;
     display: block;
@@ -518,7 +557,6 @@ section {
     height: auto;
     margin: 0 0 6px;
     padding: 0;
-
     color: #947234;
     font-size: 0.76rem;
     font-weight: 800;
@@ -527,7 +565,6 @@ section {
     text-transform: uppercase;
 }
 
-/* Titres */
 #ma-vision .principle-card h3 {
     position: static;
     display: block;
@@ -535,10 +572,8 @@ section {
     max-width: 100%;
     height: auto;
     min-height: 0;
-
     margin: 0;
     padding: 0;
-
     color: var(--primary);
     font-size: 1.2rem;
     font-weight: 700;
@@ -549,7 +584,6 @@ section {
     transform: none;
 }
 
-/* Textes des cartes */
 #ma-vision .principle-card p {
     position: static;
     display: block;
@@ -557,10 +591,8 @@ section {
     max-width: 100%;
     height: auto;
     min-height: 0;
-
     margin: 0;
     padding: 0;
-
     color: var(--muted);
     font-size: 0.94rem;
     line-height: 1.85;
@@ -574,7 +606,6 @@ section {
     color: var(--primary);
 }
 
-/* Conclusion de la vision */
 #ma-vision .vision-motto {
     margin-top: 40px;
     padding: 30px;
@@ -604,38 +635,103 @@ section {
     font-size: clamp(1.3rem, 3vw, 1.9rem);
 }
 
-/* 9. MES VALEURS */
+/* =====================================================
+   9. MES VALEURS — DESIGN MODERNE
+   ===================================================== */
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    gap: 22px;
+    gap: 24px;
+    margin-top: 32px;
 }
 
 .value-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     min-width: 0;
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    box-shadow: var(--shadow);
+    height: 100%;
+    padding: 28px 25px;
+    overflow: hidden;
+    border: 1px solid #e9e3d7;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
+    box-shadow: 0 7px 22px rgba(23, 43, 77, 0.055);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Fine ligne dorée au sommet */
+.value-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--gold));
+}
+
+/* Cercle décoratif */
+.value-card::after {
+    content: "";
+    position: absolute;
+    top: -42px;
+    right: -42px;
+    width: 105px;
+    height: 105px;
+    border: 1px solid rgba(201, 164, 92, 0.18);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 164, 92, 0.65);
+    box-shadow: var(--shadow-hover);
 }
 
 .value-card h3 {
-    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    margin: 8px 0 12px;
     color: var(--primary);
-    font-size: 1.1rem;
+    font-size: 1.18rem;
+    line-height: 1.45;
 }
 
 .value-card p {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.94rem;
+    line-height: 1.8;
+}
+
+.value-card p:last-child {
+    margin-bottom: 0;
+}
+
+.value-card strong {
+    color: var(--primary);
 }
 
 .value-principle {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 8px;
     color: #947234 !important;
-    font-size: 0.8rem !important;
-    font-weight: 700;
+    font-size: 0.79rem !important;
+    font-weight: 750;
+    letter-spacing: 0.025em;
 }
 
 /* 10. ICÔNES GÉNÉRALES */
@@ -722,6 +818,14 @@ section {
     border: 1px solid var(--border);
     border-radius: 14px;
     background: var(--surface);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.need-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
 
 .need-number {
@@ -899,7 +1003,7 @@ section {
     margin: 0;
 }
 
-/* 17. TÉMOIGNAGES */
+/* 17. CARTES DE CONTENU */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1057,11 +1161,10 @@ footer {
 }
 
 /* =====================================================
-   21. MOBILES — MISE EN PAGE RESPONSIVE
+   21. MOBILES
    ===================================================== */
 
 @media screen and (max-width: 760px) {
-
     html,
     body {
         width: 100%;
@@ -1078,7 +1181,7 @@ footer {
         padding: 48px 0;
     }
 
-    /* Navigation */
+    /* Navigation mobile */
     header {
         position: relative;
     }
@@ -1086,7 +1189,7 @@ footer {
     .navbar {
         align-items: flex-start;
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
         padding-top: 14px;
         padding-bottom: 14px;
     }
@@ -1097,16 +1200,22 @@ footer {
 
     .nav-links {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-        gap: 12px 16px;
+        gap: 5px;
         width: 100%;
     }
 
     .nav-links > a,
     .nav-dropdown > summary {
-        font-size: 0.84rem;
+        min-height: 36px;
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+
+    .nav-links .nav-cta {
+        padding: 8px 13px;
     }
 
     .nav-submenu {
@@ -1116,7 +1225,7 @@ footer {
         max-width: calc(100vw - 32px);
     }
 
-    /* Titres de section */
+    /* Titres */
     .section-heading {
         margin-bottom: 28px;
         text-align: left;
@@ -1124,6 +1233,10 @@ footer {
 
     .section-heading h2 {
         font-size: clamp(1.65rem, 7vw, 2.15rem);
+    }
+
+    .section-heading h2::after {
+        margin-left: 0;
     }
 
     /* Accueil */
@@ -1159,25 +1272,19 @@ footer {
         width: 100%;
     }
 
-    /* ==============================================
-       LES 7 PRINCIPES : UNE SEULE COLONNE
-       ============================================== */
-
+    /* Sept principes : une seule colonne */
     #ma-vision .principles-grid {
         display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
         gap: 18px !important;
-
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
         min-height: 0 !important;
-
         margin: 24px 0 !important;
         padding: 0 !important;
-
         position: static !important;
         float: none !important;
         transform: none !important;
@@ -1187,43 +1294,35 @@ footer {
     #ma-vision .principles-grid > .principle-card {
         position: relative !important;
         inset: auto !important;
-
         display: flex !important;
         flex: 0 0 auto !important;
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
-
         width: 100% !important;
         min-width: 0 !important;
         max-width: 100% !important;
         height: auto !important;
         min-height: 0 !important;
-
         margin: 0 !important;
         padding: 20px !important;
-
         float: none !important;
         clear: both !important;
         transform: none !important;
         box-sizing: border-box !important;
-
         overflow: visible !important;
     }
 
     #ma-vision .principle-card .principle-top {
         position: static !important;
-
         display: flex !important;
         flex-direction: row !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
         gap: 12px !important;
-
         width: 100% !important;
         min-width: 0 !important;
         height: auto !important;
-
         margin: 0 0 6px !important;
         padding: 0 !important;
         transform: none !important;
@@ -1232,13 +1331,11 @@ footer {
     #ma-vision .principle-card .principle-top > div:last-child {
         position: static !important;
         display: block !important;
-
         flex: 1 1 auto !important;
         width: auto !important;
         min-width: 0 !important;
         max-width: 100% !important;
         height: auto !important;
-
         margin: 0 !important;
         padding: 0 !important;
         transform: none !important;
@@ -1249,12 +1346,10 @@ footer {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-
         flex: 0 0 42px !important;
         width: 42px !important;
         min-width: 42px !important;
         height: 42px !important;
-
         margin: 0 !important;
         transform: none !important;
     }
@@ -1264,12 +1359,10 @@ footer {
     #ma-vision .principle-card p {
         position: static !important;
         display: block !important;
-
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
         min-height: 0 !important;
-
         white-space: normal !important;
         overflow: visible !important;
         overflow-wrap: anywhere !important;
@@ -1303,8 +1396,28 @@ footer {
         text-align: left;
     }
 
+    /* Mes valeurs : une carte par ligne */
+    .values-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+        margin-top: 24px;
+    }
+
+    .value-card {
+        height: auto;
+        padding: 24px 22px;
+        border-radius: 17px;
+    }
+
+    .value-card h3 {
+        font-size: 1.12rem;
+    }
+
+    .value-card p {
+        font-size: 0.92rem;
+    }
+
     /* Autres grilles */
-    .values-grid,
     .spheres-grid,
     .needs-grid,
     .applications-grid,
@@ -1336,7 +1449,6 @@ footer {
         align-items: center;
     }
 
-    /* Espacements internes */
     .human-spheres .section-heading[style] {
         margin-top: 42px !important;
     }
@@ -1362,7 +1474,6 @@ footer {
         width: 100%;
     }
 
-    /* Pied de page */
     .footer-top {
         flex-direction: column;
         gap: 24px;
@@ -1378,7 +1489,6 @@ footer {
    ===================================================== */
 
 @media screen and (max-width: 380px) {
-
     .container {
         width: calc(100% - 24px);
     }
@@ -1397,6 +1507,16 @@ footer {
 
     .hero h1 {
         font-size: 2.35rem;
+    }
+
+    .nav-links {
+        gap: 3px;
+    }
+
+    .nav-links > a,
+    .nav-dropdown > summary {
+        padding: 7px 8px;
+        font-size: 0.78rem;
     }
 
     #ma-vision .principle-card {
@@ -1423,13 +1543,17 @@ footer {
         font-size: 0.88rem !important;
     }
 
+    .value-card {
+        padding: 20px 18px;
+    }
+
     .cta-box {
         padding: 24px 16px;
     }
 }
 
 /* =====================================================
-   23. ACCESSIBILITÉ
+   23. ACCESSIBILITÉ ET ANIMATIONS
    ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
