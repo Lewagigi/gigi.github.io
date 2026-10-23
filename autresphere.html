@@ -1,1 +1,650 @@
 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ma vision des sphères humaines : estime de soi, amour, besoins fondamentaux, famille, leadership et spiritualité.">
+  <title>Ma vision des sphères humaines</title>
+
+  <style>
+    :root {
+      --primary: #244b3b;
+      --secondary: #d6b779;
+      --background: #f7f6f1;
+      --surface: #ffffff;
+      --text: #26332d;
+      --muted: #637168;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    header {
+      padding: 70px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #173b2c, #38745a);
+    }
+
+    header h1 {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+    }
+
+    header p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px;
+      background: white;
+      box-shadow: 0 2px 10px #00000012;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #e8eee9;
+    }
+
+    main {
+      width: min(1000px, 92%);
+      margin: 40px auto;
+    }
+
+    section {
+      margin-bottom: 30px;
+      padding: clamp(22px, 4vw, 38px);
+      background: var(--surface);
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #00000008;
+      scroll-margin-top: 90px;
+    }
+
+    h2 {
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    h3 {
+      color: #37634e;
+    }
+
+    .eyebrow {
+      color: #99752e;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+    }
+
+    .vision {
+      padding: 18px 22px;
+      background: #edf3ee;
+      border-left: 4px solid var(--secondary);
+      border-radius: 6px;
+      font-size: 1.05rem;
+    }
+
+    .values {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .needs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .need-card {
+      padding: 18px;
+      background: #f8f8f4;
+      border: 1px solid #e4e8df;
+      border-radius: 10px;
+    }
+
+    .need-number {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 8px;
+      color: white;
+      background: var(--primary);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .need-card h3 {
+      margin: 4px 0 8px;
+    }
+
+    .need-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th,
+    td {
+      padding: 13px;
+      border: 1px solid #dfe5dd;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: white;
+      background: var(--primary);
+    }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 22px;
+      border-left: 5px solid var(--secondary);
+      background: #f5f1e6;
+      font-size: 1.12rem;
+    }
+
+    footer {
+      padding: 30px 20px;
+      color: white;
+      background: #173b2c;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 48px 18px;
+      }
+
+      nav {
+        position: static;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      section {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <p class="eyebrow">Ma vision · Mes valeurs · Mon engagement</p>
+    <h1>Ma vision des sphères humaines</h1>
+    <p>
+      Reconnaître ma valeur, développer une relation saine avec moi-même
+      et manifester l'amour dans mes relations, ma famille, mon travail
+      et mon engagement dans la société.
+    </p>
+  </header>
+
+  <nav aria-label="Navigation principale">
+    <a href="#psychologique">Identité</a>
+    <a href="#emotionnelle">Amour de soi</a>
+    <a href="#besoins">12 besoins</a>
+    <a href="#famille">Famille</a>
+    <a href="#professionnelle">Leadership</a>
+    <a href="#spirituelle">Spiritualité</a>
+    <a href="#synthese">Ma vision</a>
+  </nav>
+
+  <main>
+
+    <section id="psychologique">
+      <p class="eyebrow">Sphère 1</p>
+      <h2>1. La sphère psychologique et identitaire — reconnaître sa valeur</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Je reconnais ma valeur intrinsèque à partir de mon identité en Dieu,
+        et non uniquement à partir du regard des autres, de mes réussites,
+        de mon statut ou de leurs appréciations.
+      </div>
+
+      <p class="values">
+        Valeurs fondamentales : dignité, estime de soi, confiance,
+        intégrité, humilité et identité en Christ.
+      </p>
+
+      <p>
+        Dans l'approche chrétienne que je souhaite développer, la valeur
+        de l'être humain repose notamment sur le fait qu'il est créé
+        à l'image de Dieu (Genèse 1:26-27). Cette valeur ne disparaît pas
+        lorsque la personne échoue, est rejetée ou n'est pas reconnue
+        par son entourage.
+      </p>
+
+      <h3>Trois notions à distinguer</h3>
+      <ul>
+        <li><strong>L'estime de soi :</strong> la manière dont je reconnais et apprécie ma propre valeur.</li>
+        <li><strong>L'amour de soi :</strong> la manière dont je prends soin de moi, me respecte et me traite avec bienveillance.</li>
+        <li><strong>L'identité en Christ :</strong> le fondement spirituel sur lequel je construis ma compréhension de qui je suis et de la valeur que je possède.</li>
+      </ul>
+
+      <p>
+        L'estime de soi et l'amour de soi sont liés, mais ils ne sont pas
+        exactement la même chose. Une estime de soi saine favorise
+        généralement une relation plus bienveillante avec soi-même.
+      </p>
+
+      <h3>Application à ma vie</h3>
+      <p>
+        Apprendre à me connaître, accepter mes limites, reconnaître mes
+        qualités, assumer mes erreurs et ne pas laisser le rejet d'autrui
+        définir toute mon identité.
+      </p>
+    </section>
+
+    <section id="emotionnelle">
+      <p class="eyebrow">Sphère 2</p>
+      <h2>2. La sphère émotionnelle et affective — s'aimer pour mieux aimer</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Je développe une relation saine avec moi-même afin de pouvoir
+        aimer les autres sans dépendre constamment de leur approbation
+        pour me sentir valable.
+      </div>
+
+      <p class="values">
+        Valeurs fondamentales : amour, pardon, compassion, maîtrise de soi,
+        paix et bienveillance.
+      </p>
+
+      <p>
+        L'amour de soi ne signifie ni l'égoïsme ni le narcissisme.
+        Il consiste à reconnaître sa dignité, à prendre soin de soi,
+        à respecter ses limites et à ne pas se traiter avec mépris.
+      </p>
+
+      <p>
+        Le commandement biblique d'aimer son prochain comme soi-même
+        (Matthieu 22:39) relie l'amour du prochain à la manière dont
+        une personne se considère elle-même.
+      </p>
+
+      <h3>Dans ma vie quotidienne, je cherche à :</h3>
+      <ul>
+        <li>Me respecter sans me croire supérieur aux autres.</li>
+        <li>Reconnaître mes besoins sans faire de moi le centre de tout.</li>
+        <li>Accueillir mes émotions sans les laisser gouverner systématiquement mes décisions.</li>
+        <li>Pardonner sans nier les blessures ni renoncer à des limites nécessaires.</li>
+        <li>Aimer les autres librement, sans faire dépendre toute ma valeur de leur affection.</li>
+      </ul>
+
+      <p>
+        L'idée selon laquelle on ne pourrait jamais aimer les autres
+        davantage qu'on ne s'aime soi-même est une interprétation forte.
+        Une personne peut faire preuve d'un grand amour envers les autres
+        tout en ayant une faible estime d'elle-même. L'objectif est de
+        développer une relation saine avec soi-même, et non de poser
+        une limite absolue à sa capacité d'aimer.
+      </p>
+    </section>
+
+    <section id="besoins">
+      <p class="eyebrow">Sphère 3</p>
+      <h2>3. La sphère sociale et relationnelle — les 12 besoins fondamentaux</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Je considère que l'amour doit se manifester concrètement dans mes
+        relations, par une attention véritable à la dignité, aux besoins
+        et à la sécurité des personnes.
+      </div>
+
+      <p class="values">
+        Valeurs fondamentales : respect, acceptation, reconnaissance,
+        appartenance, inclusion, fidélité et service.
+      </p>
+
+      <p>
+        Ces douze besoins constituent des repères pratiques pour traduire
+        l'amour en actes dans les relations humaines.
+      </p>
+
+      <div class="needs-grid">
+        <article class="need-card">
+          <span class="need-number">1</span>
+          <h3>Être valorisé</h3>
+          <p>Reconnaître la valeur de la personne et ses qualités.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">2</span>
+          <h3>Être respecté</h3>
+          <p>Respecter sa dignité, ses limites et ses droits.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">3</span>
+          <h3>Être affirmé</h3>
+          <p>Encourager la personne et lui exprimer ce qui est positif chez elle.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">4</span>
+          <h3>Être touché</h3>
+          <p>Offrir une affection physique appropriée et consentie, lorsque celle-ci est souhaitée.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">5</span>
+          <h3>Recevoir de l'attention</h3>
+          <p>Écouter avec présence et prendre au sérieux ce que la personne exprime.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">6</span>
+          <h3>Être accepté</h3>
+          <p>Accueillir la personne sans la réduire à ses erreurs ou à ses différences.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">7</span>
+          <h3>Se sentir important</h3>
+          <p>Montrer que sa présence et sa contribution comptent.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">8</span>
+          <h3>Être apprécié</h3>
+          <p>Exprimer une gratitude sincère pour ce qu'elle apporte.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">9</span>
+          <h3>Être reconnu</h3>
+          <p>Nommer ses efforts, ses compétences et ses contributions.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">10</span>
+          <h3>Être connecté</h3>
+          <p>Favoriser des liens authentiques et un sentiment d'appartenance.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">11</span>
+          <h3>Être inclus</h3>
+          <p>Permettre à chacun de participer et de prendre sa place.</p>
+        </article>
+
+        <article class="need-card">
+          <span class="need-number">12</span>
+          <h3>Se sentir en sécurité</h3>
+          <p>Créer un cadre de confiance, de protection et de stabilité.</p>
+        </article>
+      </div>
+
+      <h3>L'amour comme comportement concret</h3>
+      <p>
+        Aimer ne se limite pas à ressentir de l'affection ou à prononcer
+        des paroles bienveillantes. Il s'agit aussi de poser des actes
+        qui témoignent de l'amour.
+      </p>
+
+      <ul>
+        <li>Valoriser une personne sans la flatter artificiellement.</li>
+        <li>Respecter ses limites même lorsque nous ne partageons pas ses choix.</li>
+        <li>L'encourager sans la rendre dépendante de notre approbation.</li>
+        <li>Lui accorder du temps et une écoute réelle.</li>
+        <li>Reconnaître ses efforts et ses contributions.</li>
+        <li>Favoriser son inclusion sans imposer une proximité qu'elle ne souhaite pas.</li>
+        <li>Contribuer à sa sécurité émotionnelle et physique.</li>
+      </ul>
+
+      <p>
+        Répondre à ces besoins ne signifie pas satisfaire tous les désirs,
+        éviter toute frustration ou supprimer toute exigence. L'amour peut
+        aussi nécessiter de poser des limites, de dire la vérité et de
+        responsabiliser une personne.
+      </p>
+
+      <p>
+        Ces douze éléments sont proposés comme une grille pratique de
+        réflexion, et non comme une liste universellement reconnue de
+        besoins psychologiques exhaustifs.
+      </p>
+    </section>
+
+    <section id="famille">
+      <p class="eyebrow">Sphère 4</p>
+      <h2>4. La sphère familiale — bâtir des relations où chacun se sait aimé</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Faire de la famille un environnement dans lequel chaque membre
+        peut se sentir aimé, respecté, valorisé, écouté et en sécurité,
+        tout en apprenant la responsabilité, le respect mutuel et la vérité.
+      </div>
+
+      <p>
+        La famille est un lieu privilégié pour mettre en pratique ces principes.
+        Les douze besoins peuvent y être appliqués de plusieurs façons :
+      </p>
+
+      <ul>
+        <li><strong>Avec les enfants :</strong> valoriser leurs efforts, les encourager, leur accorder de l'attention et leur offrir un cadre sécurisant.</li>
+        <li><strong>Dans le couple :</strong> cultiver le respect, la reconnaissance, l'affection consentie, l'écoute et la fidélité.</li>
+        <li><strong>Entre parents et enfants adultes :</strong> maintenir le lien tout en respectant l'autonomie et les limites de chacun.</li>
+        <li><strong>Dans les conflits :</strong> rechercher la vérité, réparer les torts, pardonner lorsque cela est possible et restaurer la confiance sans minimiser les blessures.</li>
+      </ul>
+
+      <p>
+        L'objectif n'est pas de construire une famille parfaite, mais
+        une famille où l'amour se traduit dans les comportements quotidiens.
+      </p>
+    </section>
+
+    <section id="professionnelle">
+      <p class="eyebrow">Sphère 5</p>
+      <h2>5. La sphère professionnelle et le leadership — reconnaître la valeur des personnes</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Considérer les personnes non comme de simples ressources au service
+        d'un objectif, mais comme des êtres humains dignes de respect,
+        qui ont besoin de contribuer, de progresser et de trouver leur place.
+      </div>
+
+      <p>
+        Dans le travail et les projets que je porte, ces principes peuvent
+        devenir une véritable philosophie de management.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Besoin</th>
+              <th>Application dans le leadership</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Être valorisé</td>
+              <td>Identifier les qualités et les talents de chacun.</td>
+            </tr>
+            <tr>
+              <td>Être respecté</td>
+              <td>Traiter chacun avec dignité et équité.</td>
+            </tr>
+            <tr>
+              <td>Être affirmé</td>
+              <td>Encourager les progrès et donner des retours constructifs.</td>
+            </tr>
+            <tr>
+              <td>Recevoir de l'attention</td>
+              <td>Écouter les préoccupations de l'équipe.</td>
+            </tr>
+            <tr>
+              <td>Être important et apprécié</td>
+              <td>Reconnaître la contribution de chacun.</td>
+            </tr>
+            <tr>
+              <td>Être reconnu</td>
+              <td>Attribuer justement le mérite du travail accompli.</td>
+            </tr>
+            <tr>
+              <td>Être connecté et inclus</td>
+              <td>Favoriser la coopération et la participation.</td>
+            </tr>
+            <tr>
+              <td>Se sentir en sécurité</td>
+              <td>Créer un cadre où les personnes peuvent signaler un problème sans crainte de représailles injustes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Les besoins liés au contact physique exigent une attention
+        particulière en milieu professionnel : le consentement,
+        les limites personnelles et les règles du cadre de travail
+        restent essentiels.
+      </p>
+
+      <p>
+        Un leadership inspiré par ces valeurs ne consiste pas uniquement
+        à rechercher la performance. Il vise aussi à développer des
+        personnes autonomes, responsables et capables de servir à leur tour.
+      </p>
+    </section>
+
+    <section id="spirituelle">
+      <p class="eyebrow">Sphère 6</p>
+      <h2>6. La sphère spirituelle — recevoir sa valeur de Dieu</h2>
+
+      <div class="vision">
+        <strong>Ma vision</strong><br>
+        Comprendre que ma dignité ne dépend pas exclusivement de mes
+        réussites, de mon apparence, de mon statut ou de la reconnaissance
+        sociale. Je fonde ma valeur sur ma dignité d'être humain créé à
+        l'image de Dieu et je cherche à vivre conformément à mon identité en Christ.
+      </div>
+
+      <p>
+        Cette sphère constitue le fondement de ma vision chrétienne.
+        Elle m'invite à reconnaître ma dignité et à manifester l'amour
+        par des actes de compassion, de justice et de service.
+      </p>
+
+      <h3>Quelques repères bibliques</h3>
+      <ul>
+        <li><strong>Genèse 1:26-27 :</strong> la création de l'être humain à l'image de Dieu.</li>
+        <li><strong>Psaume 139:14 :</strong> la reconnaissance de la valeur de l'être humain dans l'œuvre de Dieu.</li>
+        <li><strong>Matthieu 22:39 :</strong> l'appel à aimer son prochain comme soi-même.</li>
+        <li><strong>Éphésiens 2:10 :</strong> l'idée que nous sommes l'œuvre de Dieu, appelés à accomplir de bonnes œuvres.</li>
+        <li><strong>1 Corinthiens 13:4-7 :</strong> les caractéristiques de l'amour, notamment la patience, la bonté et l'absence d'orgueil.</li>
+      </ul>
+
+      <p>
+        Ces références soutiennent une vision de la dignité, de l'amour
+        et du service. Être créé à l'image de Dieu ne signifie pas que
+        l'être humain possède la même nature que Dieu ou qu'il lui est identique.
+      </p>
+    </section>
+
+    <section id="synthese">
+      <p class="eyebrow">En résumé</p>
+      <h2>Le modèle que je souhaite développer</h2>
+
+      <h3>Dieu : la source de ma valeur</h3>
+      <p>Dignité humaine et identité en Christ.</p>
+
+      <h3>Estime de soi et amour de soi</h3>
+      <p>
+        Me reconnaître comme une personne digne de respect et apprendre
+        à prendre soin de moi.
+      </p>
+
+      <h3>Amour mis en action</h3>
+      <p>
+        Répondre avec discernement aux besoins fondamentaux des autres,
+        sans oublier les miens.
+      </p>
+
+      <h3>Transformation des relations et des milieux de vie</h3>
+      <p>Famille, communauté, travail, leadership et société.</p>
+
+      <blockquote>
+        « Je reconnais ma valeur à la lumière de Dieu, je développe une
+        relation saine avec moi-même et je manifeste l'amour de Christ
+        en contribuant, avec discernement, à la dignité, à la croissance
+        et au bien-être des personnes que je rencontre. Je souhaite que
+        cette vision transforme toutes les sphères de ma vie, de ma famille
+        à mon engagement dans la société. »
+      </blockquote>
+
+      <p>
+        Ce schéma représente le modèle de développement que je souhaite
+        promouvoir, plutôt qu'une loi psychologique universelle.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Ma vision des sphères humaines</strong></p>
+    <p>Grandir en valeur, aimer avec discernement et contribuer au bien-être des autres.</p>
+  </footer>
+
+</body>
+</html>
