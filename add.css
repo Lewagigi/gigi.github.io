@@ -1,0 +1,265 @@
+
+  <style>
+    :root {
+      --primary: #174A7E;
+      --secondary: #65B5E8;
+      --background: #F2F7FC;
+      --surface: #FFFFFF;
+      --text: #263746;
+      --muted: #607487;
+      --dark-blue: #12345A;
+      --light-blue: #EAF4FC;
+      --border: #D7E7F5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    /* Bouton de retour vers l'accueil */
+
+    .back-home {
+      display: inline-block;
+      margin: 18px 25px;
+      padding: 10px 18px;
+      color: var(--primary);
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-home:hover {
+      color: white;
+      background: var(--primary);
+    }
+
+    .back-home:focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    /* En-tête */
+
+    header {
+      padding: 65px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(
+        135deg,
+        var(--dark-blue),
+        var(--primary),
+        var(--secondary)
+      );
+    }
+
+    header h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.2;
+    }
+
+    header p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Navigation */
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      padding: 8px 13px;
+      border-radius: 20px;
+      background: var(--light-blue);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+      background: var(--primary);
+    }
+
+    /* Contenu principal */
+
+    main {
+      width: min(1100px, 92%);
+      margin: 35px auto 60px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(23, 74, 126, 0.06);
+    }
+
+    section h2 {
+      margin-top: 0;
+      padding-bottom: 10px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+    }
+
+    section h3 {
+      color: var(--dark-blue);
+    }
+
+    .intro {
+      font-size: 1.08rem;
+    }
+
+    .highlight {
+      margin: 20px 0;
+      padding: 18px;
+      background: var(--light-blue);
+      border-left: 5px solid var(--secondary);
+      border-radius: 8px;
+    }
+
+    /* Cartes */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 20px;
+      background: #F8FBFE;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 8px;
+      color: white;
+      background: var(--primary);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* Liste des besoins */
+
+    .needs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .needs-list li {
+      padding: 13px 15px;
+      background: var(--light-blue);
+      border-radius: 8px;
+    }
+
+    .needs-list li::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Références bibliques */
+
+    .verse {
+      margin: 15px 0;
+      padding: 15px 18px;
+      background: #F8FBFE;
+      border-left: 4px solid var(--secondary);
+      border-radius: 6px;
+    }
+
+    .reference {
+      display: block;
+      margin-top: 5px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Pied de page */
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+      background: var(--dark-blue);
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    .footer-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 16px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--dark-blue);
+      background: white;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 45px 18px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .back-home {
+        margin: 14px;
+      }
+    }
+  </style>
