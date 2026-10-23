@@ -104,6 +104,46 @@
       color: var(--primary);
     }
 
+    /* Sous-menu des sphères humaines : facile à compléter avec d'autres liens */
+    .nav-dropdown {
+      position: relative;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555870;
+    }
+    .nav-dropdown summary {
+      cursor: pointer;
+      list-style: none;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
+    .nav-dropdown summary::after { content: " ▾"; }
+    .nav-dropdown[open] summary,
+    .nav-dropdown summary:hover { color: var(--primary); }
+    .nav-submenu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      z-index: 1100;
+      display: grid;
+      gap: 4px;
+      min-width: 245px;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(26, 28, 70, .14);
+    }
+    .nav-links .nav-submenu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      white-space: normal;
+    }
+    .nav-links .nav-submenu a:hover { background: #f5f3ff; }
+
     .nav-cta {
       padding: 11px 18px;
       border-radius: 10px;
@@ -850,7 +890,17 @@
         <a href="#accueil">Accueil</a>
         <a href="#ma-vision">Ma vision</a>
         <a href="#mes-valeurs">Mes valeurs</a>
-        <a href="#spheres-humaines">Sphères humaines</a>
+        <details class="nav-dropdown">
+          <summary>Sphères humaines</summary>
+          <div class="nav-submenu">
+            <a href="#sphere-identitaire">Sphère psychologique et identitaire</a>
+            <a href="#sphere-emotionnelle">Sphère émotionnelle et affective</a>
+            <a href="#sphere-spirituelle">Sphère spirituelle</a>
+            <a href="#sphere-sociale">Sphère sociale et relationnelle</a>
+            <a href="https://github.com/Lewagigi/gigi.github.io/blob/main/autresphere.html" target="_blank" rel="noopener noreferrer">Autres sphères</a>
+            <!-- Ajoutez ici de nouveaux liens vers d'autres sphères -->
+          </div>
+        </details>
         <a href="#missions">Mes missions</a>
         <a href="#domaines">Mes domaines</a>
         <a href="#domaines" class="nav-cta">Mes services →</a>
@@ -1043,7 +1093,7 @@
         </div>
 
         <div class="spheres-grid">
-          <article class="sphere-card">
+          <article class="sphere-card" id="sphere-identitaire">
             <div class="sphere-icon" aria-hidden="true">🪞</div>
             <span class="sphere-label">Sphère psychologique et identitaire</span>
             <h3>Reconnaître sa valeur</h3>
@@ -1059,7 +1109,7 @@
             <p><strong>Application :</strong> apprendre à se connaître, accepter ses limites, reconnaître ses qualités, assumer ses erreurs et ne pas laisser le rejet d’autrui définir toute son identité.</p>
           </article>
 
-          <article class="sphere-card">
+          <article class="sphere-card" id="sphere-emotionnelle">
             <div class="sphere-icon" aria-hidden="true">❤️</div>
             <span class="sphere-label">Sphère émotionnelle et affective</span>
             <h3>S’aimer pour mieux aimer</h3>
@@ -1076,7 +1126,7 @@
             <p>Une personne peut aimer profondément les autres tout en ayant une faible estime d’elle-même. L’objectif est de développer une relation saine avec soi-même, sans poser de limite absolue à sa capacité d’aimer.</p>
           </article>
 
-          <article class="sphere-card">
+          <article class="sphere-card" id="sphere-spirituelle">
             <div class="sphere-icon" aria-hidden="true">🙏</div>
             <span class="sphere-label">Sphère spirituelle</span>
             <h3>Recevoir sa valeur de Dieu</h3>
@@ -1092,7 +1142,7 @@
             <p>Être créé à l’image de Dieu ne signifie pas être identique à Dieu : cette dignité nous appelle à l’amour, à l’humilité et au service.</p>
           </article>
 
-          <article class="sphere-card">
+          <article class="sphere-card" id="sphere-sociale">
             <div class="sphere-icon" aria-hidden="true">🤝</div>
             <span class="sphere-label">Sphère sociale et relationnelle</span>
             <h3>Faire de l’amour un acte concret</h3>
