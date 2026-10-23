@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,12 +9,15 @@
 
   <style>
     :root {
-      --primary: #244b3b;
-      --secondary: #d6b779;
-      --background: #f7f6f1;
-      --surface: #ffffff;
-      --text: #26332d;
-      --muted: #637168;
+      --primary: #174A7E;
+      --secondary: #65B5E8;
+      --background: #F2F7FC;
+      --surface: #FFFFFF;
+      --text: #263746;
+      --muted: #607487;
+      --dark-blue: #12345A;
+      --light-blue: #EAF4FC;
+      --border: #D7E7F5;
     }
 
     * {
@@ -35,15 +37,15 @@
     }
 
     header {
-      padding: 70px 20px;
+      padding: 75px 20px;
       text-align: center;
       color: white;
-      background: linear-gradient(135deg, #173b2c, #38745a);
+      background: linear-gradient(135deg, var(--dark-blue), #2878B5);
     }
 
     header h1 {
       max-width: 900px;
-      margin: 0 auto 20px;
+      margin: 15px auto 20px;
       font-size: clamp(2rem, 5vw, 3.5rem);
       line-height: 1.2;
     }
@@ -52,6 +54,14 @@
       max-width: 750px;
       margin: auto;
       font-size: 1.1rem;
+    }
+
+    .eyebrow {
+      color: var(--secondary);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
     }
 
     nav {
@@ -63,8 +73,8 @@
       flex-wrap: wrap;
       gap: 8px;
       padding: 14px;
-      background: white;
-      box-shadow: 0 2px 10px #00000012;
+      background: var(--surface);
+      box-shadow: 0 2px 10px #12345A12;
     }
 
     nav a {
@@ -74,11 +84,13 @@
       font-size: 0.92rem;
       font-weight: bold;
       border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
     }
 
     nav a:hover,
     nav a:focus {
-      background: #e8eee9;
+      background: #E3F1FC;
+      color: var(--dark-blue);
     }
 
     main {
@@ -90,8 +102,9 @@
       margin-bottom: 30px;
       padding: clamp(22px, 4vw, 38px);
       background: var(--surface);
+      border: 1px solid #E4EDF5;
       border-radius: 14px;
-      box-shadow: 0 4px 18px #00000008;
+      box-shadow: 0 4px 18px #12345A08;
       scroll-margin-top: 90px;
     }
 
@@ -101,23 +114,21 @@
     }
 
     h3 {
-      color: #37634e;
-    }
-
-    .eyebrow {
-      color: #99752e;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 0.8rem;
+      color: #2878B5;
+      line-height: 1.4;
     }
 
     .vision {
+      margin: 22px 0;
       padding: 18px 22px;
-      background: #edf3ee;
+      background: var(--light-blue);
       border-left: 4px solid var(--secondary);
       border-radius: 6px;
       font-size: 1.05rem;
+    }
+
+    .vision strong {
+      color: var(--primary);
     }
 
     .values {
@@ -134,16 +145,22 @@
 
     .need-card {
       padding: 18px;
-      background: #f8f8f4;
-      border: 1px solid #e4e8df;
+      background: #F6FAFE;
+      border: 1px solid var(--border);
       border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .need-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px #174A7E12;
     }
 
     .need-number {
       display: inline-grid;
       place-items: center;
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       margin-bottom: 8px;
       color: white;
       background: var(--primary);
@@ -153,6 +170,7 @@
 
     .need-card h3 {
       margin: 4px 0 8px;
+      color: var(--primary);
     }
 
     .need-card p {
@@ -162,18 +180,20 @@
 
     .table-wrapper {
       overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 8px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      background: white;
     }
 
     th,
     td {
       padding: 13px;
-      border: 1px solid #dfe5dd;
+      border: 1px solid var(--border);
       text-align: left;
       vertical-align: top;
     }
@@ -183,23 +203,38 @@
       background: var(--primary);
     }
 
+    tbody tr:nth-child(even) {
+      background: #F6FAFE;
+    }
+
     blockquote {
-      margin: 20px 0;
+      margin: 24px 0;
       padding: 22px;
       border-left: 5px solid var(--secondary);
-      background: #f5f1e6;
+      background: var(--light-blue);
+      color: var(--dark-blue);
       font-size: 1.12rem;
+      border-radius: 0 8px 8px 0;
     }
 
     footer {
-      padding: 30px 20px;
+      padding: 35px 20px;
       color: white;
-      background: #173b2c;
+      background: var(--dark-blue);
       text-align: center;
     }
 
     footer p {
       margin: 5px;
+    }
+
+    footer strong {
+      color: #A9DDF8;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
     }
 
     @media (max-width: 600px) {
@@ -209,14 +244,38 @@
 
       nav {
         position: static;
+        gap: 4px;
+        padding: 10px;
       }
 
       nav a {
+        padding: 7px 9px;
         font-size: 0.85rem;
       }
 
       section {
         padding: 22px 18px;
+      }
+
+      .needs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -360,6 +419,7 @@
       </p>
 
       <div class="needs-grid">
+
         <article class="need-card">
           <span class="need-number">1</span>
           <h3>Être valorisé</h3>
@@ -431,6 +491,7 @@
           <h3>Se sentir en sécurité</h3>
           <p>Créer un cadre de confiance, de protection et de stabilité.</p>
         </article>
+
       </div>
 
       <h3>L'amour comme comportement concret</h3>
