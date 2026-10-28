@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gagnez du temps avec des résumés clairs de vidéos, podcasts, articles et conférences, envoyés directement par e-mail.">
+  <meta name="theme-color" content="#101827">
+  <title>L’Essentiel par e-mail — Apprenez plus, gagnez du temps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101827;
+      --muted: #657084;
+      --paper: #f7f8fc;
+      --white: #ffffff;
+      --accent: #6558f5;
+      --accent-dark: #4d40df;
+      --mint: #dff9ee;
+      --line: #e6e9f1;
+      --shadow: 0 24px 70px rgba(25, 32, 65, .10);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { padding: 20px 0; background: rgba(247,248,252,.88); border-bottom: 1px solid rgba(230,233,241,.8); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -.5px; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; color: white; background: var(--accent); border-radius: 12px; font-size: 19px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: #4f596b; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; border: 0; border-radius: 13px; padding: 13px 20px; font-weight: 700; font-size: 14px; cursor: pointer; transition: transform .18s ease, background .18s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: white; box-shadow: 0 9px 24px rgba(101,88,245,.22); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-light { background: white; color: var(--ink); border: 1px solid var(--line); }
+    .hero { padding: 92px 0 78px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 64px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 99px; background: #eeecff; color: var(--accent-dark); font-size: 12px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+    .eyebrow span { width: 7px; height: 7px; background: #36b985; border-radius: 50%; }
+    h1, h2, h3 { font-family: Manrope, sans-serif; line-height: 1.15; letter-spacing: -1.1px; }
+    h1 { max-width: 660px; margin: 22px 0; font-size: clamp(42px, 5.5vw, 68px); font-weight: 800; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 590px; color: var(--muted); font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .trust-note { display: flex; align-items: center; gap: 10px; margin-top: 22px; color: var(--muted); font-size: 13px; }
+    .trust-note strong { color: var(--ink); }
+    .hero-visual { min-height: 420px; position: relative; display: grid; place-items: center; }
+    .visual-glow { position: absolute; width: 340px; height: 340px; border-radius: 50%; background: #e9e6ff; filter: blur(2px); }
+    .mail-card { position: relative; width: min(100%, 390px); padding: 26px; border: 1px solid rgba(255,255,255,.9); border-radius: 25px; background: rgba(255,255,255,.92); box-shadow: var(--shadow); transform: rotate(2deg); }
+    .mail-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .mail-top strong { font-family: Manrope, sans-serif; }
+    .mail-tag { padding: 5px 9px; color: #137451; background: var(--mint); border-radius: 8px; font-size: 11px; font-weight: 800; }
+    .mail-card h3 { margin: 20px 0 8px; font-size: 23px; }
+    .mail-card p { color: var(--muted); font-size: 13px; }
+    .fake-line { height: 8px; margin: 12px 0; border-radius: 10px; background: #edf0f6; }
+    .fake-line.short { width: 63%; }
+    .key-idea { display: flex; gap: 12px; margin-top: 20px; padding: 14px; border-radius: 14px; background: #f3f2ff; font-size: 13px; }
+    .key-idea b { display: block; margin-bottom: 3px; }
+    .float-chip { position: absolute; padding: 12px 16px; background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 35px rgba(25,32,65,.09); font-size: 13px; font-weight: 700; }
+    .chip-one { left: 0; top: 66px; transform: rotate(-5deg); }
+    .chip-two { right: -4px; bottom: 50px; transform: rotate(4deg); }
+    .section { padding: 82px 0; }
+    .section-white { background: white; }
+    .section-heading { max-width: 680px; margin: 0 auto 42px; text-align: center; }
+    .section-label { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+    h2 { margin: 12px 0 14px; font-size: clamp(30px, 4vw, 44px); }
+    .section-heading p { color: var(--muted); margin: 0; font-size: 16px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step-card { padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .step-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 20px; border-radius: 16px; background: #eeecff; font-size: 24px; }
+    .step-card h3, .benefit h3 { margin: 0 0 9px; font-size: 19px; letter-spacing: -.4px; }
+    .step-card p, .benefit p { margin: 0; color: var(--muted); font-size: 14px; }
+    .benefits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 36px; }
+    .benefit { display: flex; gap: 15px; }
+    .check { flex: 0 0 30px; display: grid; place-items: center; height: 30px; border-radius: 50%; background: var(--mint); color: #137451; font-weight: 800; }
+    .audience { margin-top: 40px; padding: 24px; border-radius: 18px; background: #f5f4ff; color: #4f4b78; text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 800px; margin: 0 auto; align-items: stretch; }
+    .price-card { position: relative; padding: 30px; background: white; border: 1px solid var(--line); border-radius: 24px; }
+    .price-card.featured { border: 2px solid var(--accent); box-shadow: var(--shadow); }
+    .popular { display: inline-block; padding: 5px 10px; margin-bottom: 12px; border-radius: 8px; background: #eeecff; color: var(--accent-dark); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .price-card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.5px; }
+    .price-description { color: var(--muted); font-size: 14px; min-height: 44px; }
+    .price { margin: 20px 0 4px; font-family: Manrope, sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -1.8px; }
+    .price span { font-family: "DM Sans", sans-serif; color: var(--muted); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+    .price-note { color: var(--muted); font-size: 12px; }
+    .price-card ul { list-style: none; margin: 24px 0; padding: 0; }
+    .price-card li { margin: 12px 0; color: #475165; font-size: 14px; }
+    .price-card li::before { content: "✓"; color: #15966a; font-weight: 800; margin-right: 9px; }
+    .price-card .btn { width: 100%; }
+    .pricing-footnote { max-width: 700px; margin: 22px auto 0; color: var(--muted); text-align: center; font-size: 12px; }
+    .cta { padding: 70px 0; }
+    .cta-panel { padding: 52px 30px; border-radius: 28px; color: white; text-align: center; background: #171d31; overflow: hidden; position: relative; }
+    .cta-panel::before, .cta-panel::after { content: ""; position: absolute; width: 210px; height: 210px; border-radius: 50%; background: rgba(101,88,245,.22); filter: blur(3px); }
+    .cta-panel::before { top: -120px; left: -55px; }
+    .cta-panel::after { right: -60px; bottom: -150px; }
+    .cta-panel > * { position: relative; z-index: 1; }
+    .cta-panel h2 { margin-top: 0; }
+    .cta-panel p { max-width: 600px; margin: 0 auto 25px; color: #c5cada; }
+    .signup-note { margin-top: 14px !important; font-size: 12px; }
+    footer { padding: 27px 0; border-top: 1px solid var(--line); background: white; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: 12px; }
+    .footer-inner .brand { color: var(--ink); font-size: 15px; }
+    @media (max-width: 800px) {
+      .nav-links a:not(.btn) { display: none; }
+      .hero { padding: 60px 0 45px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 25px; }
+      .hero-visual { min-height: 390px; }
+      .steps { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; }
+      .section { padding: 62px 0; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav .btn { padding: 10px 12px; font-size: 12px; }
+      .brand { font-size: 15px; }
+      .hero-copy { font-size: 16px; }
+      .hero-visual { min-height: 360px; }
+      .mail-card { padding: 20px; }
+      .chip-one { left: -2px; top: 35px; }
+      .chip-two { right: -2px; bottom: 20px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card { padding: 25px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="L’Essentiel par e-mail, accueil">
+        <span class="brand-mark">✦</span><span>L’Essentiel <span style="color:#6558f5">par e-mail</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#fonctionnement">Comment ça marche</a>
+        <a href="#avantages">Les avantages</a>
+        <a href="#tarifs">Tarifs</a>
+        <a class="btn btn-primary" href="#tarifs">Choisir mon abonnement →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Apprendre autrement</div>
+          <h1>Ne manquez plus l’essentiel. <em>Gagnez du temps.</em></h1>
+          <p class="hero-copy">Vous avez repéré une vidéo, un podcast ou un article intéressant, mais vous n’avez pas le temps de le consulter ? Recevez un résumé clair et structuré directement dans votre boîte mail.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#tarifs">Découvrir les abonnements <span>→</span></a>
+            <a class="btn btn-light" href="#fonctionnement">Comment ça marche ?</a>
+          </div>
+          <div class="trust-note"><span>✉️</span><span><strong>Simple et pratique.</strong> L’essentiel, directement dans votre boîte mail.</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration d’un résumé reçu par e-mail">
+          <div class="visual-glow"></div>
+          <div class="float-chip chip-one">⏱️ Quelques minutes de lecture</div>
+          <article class="mail-card">
+            <div class="mail-top"><strong>Votre résumé est prêt</strong><span class="mail-tag">L’ESSENTIEL</span></div>
+            <h3>Les idées à retenir</h3>
+            <p>Un résumé pratique pour comprendre les points clés d’un contenu sans devoir tout regarder ou tout lire.</p>
+            <div class="fake-line"></div><div class="fake-line"></div><div class="fake-line short"></div>
+            <div class="key-idea"><span>💡</span><div><b>À retenir</b>Les idées principales, les enseignements utiles et les points à approfondir.</div></div>
+          </article>
+          <div class="float-chip chip-two">📩 Livré par e-mail</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="fonctionnement">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Simple comme bonjour</span>
+          <h2>L’essentiel en trois étapes</h2>
+          <p>Transformez les contenus que vous souhaitez découvrir en résumés faciles à consulter, même avec un emploi du temps chargé.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-icon">🔗</div>
+            <h3>1. Partagez un contenu</h3>
+            <p>Envoyez le lien d’une vidéo, d’un podcast, d’un article, d’une interview ou d’une conférence que vous aimeriez découvrir.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">🧠</div>
+            <h3>2. Nous synthétisons l’essentiel</h3>
+            <p>Les idées principales, les informations importantes et les enseignements à retenir sont organisés dans un résumé clair.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">📬</div>
+            <h3>3. Recevez votre résumé</h3>
+            <p>Retrouvez votre résumé dans votre boîte mail et consultez-le au moment qui vous convient.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="avantages">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Plus de valeur, moins de temps perdu</span>
+          <h2>Apprenez plus. Passez moins de temps à chercher.</h2>
+          <p>Un service pensé pour les personnes curieuses qui veulent continuer à apprendre sans ajouter des heures à leur journée.</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><span class="check">✓</span><div><h3>Gagnez du temps</h3><p>Allez à l’essentiel au lieu de devoir consulter chaque contenu dans son intégralité.</p></div></div>
+          <div class="benefit"><span class="check">✓</span><div><h3>Retenez les idées clés</h3><p>Retrouvez les points importants dans une synthèse claire et organisée.</p></div></div>
+          <div class="benefit"><span class="check">✓</span><div><h3>Apprenez à votre rythme</h3><p>Lisez vos résumés pendant une pause, dans les transports ou entre deux rendez-vous.</p></div></div>
+          <div class="benefit"><span class="check">✓</span><div><h3>Explorez vos centres d’intérêt</h3><p>Entrepreneuriat, technologie, développement personnel, éducation, culture et bien d’autres sujets.</p></div></div>
+        </div>
+        <div class="audience">🎓 Pour les étudiants · 💼 les professionnels · 🚀 les entrepreneurs · 💡 toutes les personnes curieuses</div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="tarifs">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Choisissez votre formule</span>
+          <h2>Votre curiosité mérite du temps.</h2>
+          <p>Choisissez la formule qui correspond à vos habitudes et faites une place à l’apprentissage dans votre quotidien.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Abonnement mensuel</h3>
+            <p class="price-description">La flexibilité, sans engagement annuel.</p>
+            <div class="price">20 € <span>/ mois</span></div>
+            <div class="price-note">Facturation mensuelle</div>
+            <ul>
+              <li>Résumés envoyés par e-mail</li>
+              <li>Accès au service au fil des mois</li>
+              <li>Une formule flexible</li>
+            </ul>
+            <!-- Remplacez le lien ci-dessous par votre lien de paiement Stripe mensuel. -->
+            <a class="btn btn-primary" href="#inscription">S’abonner — 20 €/mois →</a>
+          </article>
+          <article class="price-card featured">
+            <span class="popular">Meilleur prix sur l’année</span>
+            <h3>Abonnement annuel</h3>
+            <p class="price-description">Pour intégrer les résumés à votre routine toute l’année.</p>
+            <div class="price">200 € <span>/ an</span></div>
+            <div class="price-note">Soit 16,67 € par mois en moyenne</div>
+            <ul>
+              <li>Accès au service pendant 12 mois</li>
+              <li>Résumés envoyés par e-mail</li>
+              <li>Économisez 40 € par rapport à 12 paiements mensuels</li>
+            </ul>
+            <!-- Remplacez le lien ci-dessous par votre lien de paiement Stripe annuel. -->
+            <a class="btn btn-primary" href="#inscription">Choisir l’offre annuelle →</a>
+          </article>
+        </div>
+        <p class="pricing-footnote">Le nombre de résumés inclus, les délais de livraison et les conditions de résiliation doivent être précisés avant l’ouverture des abonnements.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="inscription">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Prêt à aller à l’essentiel ?</h2>
+          <p>Choisissez votre abonnement et découvrez une manière plus simple de rester informé et d’apprendre, même lorsque votre temps est limité.</p>
+          <!-- Pour activer le paiement, remplacez le lien du bouton par l’URL de votre page de paiement Stripe. -->
+          <a class="btn btn-primary" href="#tarifs">Choisir mon abonnement</a>
+          <p class="signup-note">Le paiement en ligne sera activé dès que le lien de paiement sécurisé sera configuré.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#accueil"><span class="brand-mark">✦</span><span>L’Essentiel par e-mail</span></a>
+      <span>© <span id="year"></span> L’Essentiel par e-mail. Tous droits réservés.</span>
+      <a href="#tarifs">Voir les abonnements ↑</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
