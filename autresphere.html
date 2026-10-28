@@ -23,6 +23,27 @@
   <link rel="stylesheet" href="sphere.css">
 </head>
 
+
+  <style>
+    /* Mise en page de la section « La famille » sans modifier son texte */
+    .application-card:has(.sphere-icon) p,
+    .application-card:has(.sphere-icon) li {
+      white-space: pre-line;
+      line-height: 1.8;
+    }
+    .application-card:has(.sphere-icon) p {
+      margin-bottom: 1.25rem;
+    }
+    .application-card:has(.sphere-icon) ul.bullet-list {
+      display: block;
+      padding-left: 1.4rem;
+    }
+    .application-card:has(.sphere-icon) li {
+      margin-bottom: 1.5rem;
+      padding-left: 0.2rem;
+    }
+  </style>
+
 <body id="top" class="spheres-page">
 
   <a href="index.html" class="back-home">
